@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C. Moquedace</title>
+  <meta name="description" content="Pagina pessoal de C. Moquedace: projetos, estudos e links.">
+  <style>
+    :root {
+      --background: #f7f3ec;
+      --surface: #fffdf8;
+      --surface-soft: #eee7dc;
+      --text: #202124;
+      --muted: #626a73;
+      --line: #ddd2c2;
+      --blue: #126782;
+      --green: #3a7652;
+      --red: #b34d3f;
+      --shadow: 0 20px 60px rgba(32, 33, 36, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(18, 103, 130, 0.14), transparent 34rem),
+        linear-gradient(180deg, #fffaf2 0%, var(--background) 48%, #eef3ed 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+    }
+
+    .logo {
+      align-items: center;
+      display: inline-flex;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      align-items: center;
+      background: var(--text);
+      border-radius: 50%;
+      color: #ffffff;
+      display: inline-flex;
+      height: 38px;
+      justify-content: center;
+      width: 38px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-end;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 40px;
+      align-items: center;
+      min-height: calc(100vh - 92px);
+      padding: 36px 0 72px;
+    }
+
+    .kicker {
+      color: var(--red);
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 6.8rem);
+      letter-spacing: 0;
+      line-height: 0.92;
+      margin: 0;
+      max-width: 820px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      margin: 28px 0 0;
+      max-width: 700px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      align-items: center;
+      border: 1px solid var(--text);
+      border-radius: 7px;
+      display: inline-flex;
+      font-weight: 800;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 16px;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: #ffffff;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .portrait {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .portrait-art {
+      align-items: center;
+      aspect-ratio: 1;
+      background:
+        linear-gradient(135deg, rgba(18, 103, 130, 0.95), rgba(58, 118, 82, 0.9)),
+        var(--blue);
+      border-radius: 8px;
+      color: #ffffff;
+      display: flex;
+      font-size: 5.6rem;
+      font-weight: 900;
+      justify-content: center;
+      letter-spacing: 0;
+      margin-bottom: 20px;
+    }
+
+    .portrait h2 {
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+
+    .portrait p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      align-items: end;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 460px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.84);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      font-size: 1.08rem;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #394049;
+      font-size: 0.92rem;
+      padding: 7px 11px;
+    }
+
+    .contact {
+      background: var(--text);
+      border-radius: 8px;
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      padding: 32px;
+    }
+
+    .contact h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      margin: 0 0 12px;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.72);
+      margin: 0;
+      max-width: 620px;
+    }
+
+    .contact-links {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .contact-links a {
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 7px;
+      min-height: 42px;
+      padding: 9px 13px;
+      text-decoration: none;
+    }
+
+    footer {
+      color: var(--muted);
+      padding: 28px 0 40px;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        align-items: flex-start;
+        display: block;
+      }
+
+      nav {
+        justify-content: flex-start;
+        margin-top: 14px;
+      }
+
+      .hero,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 28px;
+      }
+
+      .portrait {
+        max-width: 420px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="logo" href="#inicio" aria-label="C. Moquedace">
+      <span class="logo-mark">CM</span>
+      <span>C. Moquedace</span>
+    </a>
+    <nav aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="wrap hero" id="sobre">
+      <div>
+        <p class="kicker">Pagina pessoal</p>
+        <h1>Ideias, estudos e projetos em um so lugar.</h1>
+        <p class="lead">
+          Ola, eu sou C. Moquedace. Este site e meu espaco para organizar o que estou
+          aprendendo, mostrar projetos e deixar meus links mais importantes faceis de achar.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/moquedace">Ver GitHub</a>
+          <a class="button" href="#projetos">Ver projetos</a>
+        </div>
+      </div>
+
+      <aside class="portrait" aria-label="Resumo pessoal">
+        <div class="portrait-art" aria-hidden="true">CM</div>
+        <h2>Em construcao, mas ja no ar.</h2>
+        <p>
+          Troque este texto por uma bio curta: sua area, o que voce estuda,
+          o que quer construir e onde as pessoas podem te encontrar.
+        </p>
+      </aside>
+    </section>
+
+    <section class="wrap" id="projetos">
+      <div class="section-head">
+        <h2>Projetos</h2>
+        <p>Use estes blocos para destacar trabalhos, exercicios, pesquisas ou experimentos.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Projeto principal</h3>
+          <p>Escreva uma frase sobre o projeto mais importante que voce quer apresentar.</p>
+        </article>
+        <article class="card">
+          <h3>Estudos recentes</h3>
+          <p>Mostre algo que voce esta aprendendo agora, como HTML, CSS, Python ou Git.</p>
+        </article>
+        <article class="card">
+          <h3>Proximas ideias</h3>
+          <p>Guarde aqui ideias futuras para transformar em projetos e publicar no GitHub.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="habilidades">
+      <div class="section-head">
+        <h2>Habilidades</h2>
+        <p>Uma lista simples para mostrar suas ferramentas, interesses e tecnologias.</p>
+      </div>
+      <div class="card">
+        <h3>Ferramentas e temas</h3>
+        <p>Edite os itens abaixo para combinar com voce.</p>
+        <div class="tag-list" aria-label="Lista de habilidades">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Projetos pessoais</span>
+          <span class="tag">Aprendizado continuo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contato">
+      <div class="contact">
+        <div>
+          <h2>Vamos conversar?</h2>
+          <p>
+            Atualize estes links com seu email, LinkedIn ou outras redes que voce queira divulgar.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:seu-email@exemplo.com">Email</a>
+          <a href="https://github.com/moquedace">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Feito com HTML e CSS. Publicado com GitHub Pages.
+  </footer>
+</body>
+</html>
