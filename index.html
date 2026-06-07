@@ -469,6 +469,19 @@
       margin: 0 0 10px;
     }
 
+    .card-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+      transition: border-color .2s, color .2s;
+    }
+
+    .card-link:hover {
+      color: var(--forest);
+      border-color: var(--forest);
+    }
+
     .card p {
       color: var(--muted);
       margin: 0;
@@ -793,7 +806,7 @@
       <div class="project-grid">
         <article class="card">
           <span class="num">PhD Thesis · UFV · 2025</span>
-          <h3>Artificial intelligence applied to the global pedological dimension</h3>
+          <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">Artificial intelligence applied to the global pedological dimension</a></h3>
           <p>A doctoral investigation into how AI can model, map and explain biota–soil–climate interactions and organic carbon dynamics across scales, from regional to planetary.</p>
           <p class="pt">Investigação doutoral sobre como a IA pode modelar, mapear e explicar interações biota–solo–clima e a dinâmica do carbono orgânico em múltiplas escalas.</p>
           <div class="tag-list">
@@ -805,7 +818,7 @@
         </article>
         <article class="card">
           <span class="num">Sci. Total Environment · 2026</span>
-          <h3>On the importance of soil texture for predicting future global soil respiration</h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.scitotenv.2026.181663" target="_blank" rel="noopener">On the importance of soil texture for predicting future global soil respiration</a></h3>
           <p>Machine learning reveals soil texture as a key but overlooked control on 21st-century soil CO₂ efflux. Global projections at 1 km resolution under climate change scenarios to 2100.</p>
           <p class="pt">Aprendizado de máquina revela a textura do solo como controle central — mas negligenciado — da respiração global do solo ao longo do século XXI.</p>
           <div class="tag-list">
@@ -817,7 +830,7 @@
         </article>
         <article class="card">
           <span class="num">Geoderma Regional · 2024</span>
-          <h3>High-resolution mapping of soil carbon stocks in the western Amazon</h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">High-resolution mapping of soil carbon stocks in the western Amazon</a></h3>
           <p>Spatial modelling of soil organic carbon stocks across Rondônia using machine learning and remote sensing covariates — connecting tropical land-use change to carbon dynamics.</p>
           <p class="pt">Modelagem de alta resolução de estoques de carbono orgânico do solo em Rondônia, conectando mudança de uso da terra e dinâmica do carbono na Amazônia Ocidental.</p>
           <div class="tag-list">
