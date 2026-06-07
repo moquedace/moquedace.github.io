@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cássio Marques Moquedace | Soil Science, AI & Spatial Data</title>
   <meta name="description" content="Bilingual personal page of Cássio Marques Moquedace, soil scientist working with machine learning, pedometrics, digital soil mapping and environmental change.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23101817'/><text x='50' y='68' font-family='system-ui,sans-serif' font-weight='700' font-size='36' text-anchor='middle' fill='%23f6f1e8'>CM</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://moquedace.github.io">
+  <meta property="og:title"       content="Cássio Marques Moquedace | Soil Science, AI & Spatial Data">
+  <meta property="og:description" content="Postdoctoral researcher at ESALQ-USP working at the interface of pedometrics, digital soil mapping, machine learning and environmental change.">
+  <meta property="og:image"       content="https://moquedace.github.io/assets/profile.jpg">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Cássio Marques Moquedace | Soil Science, AI & Spatial Data">
+  <meta name="twitter:description" content="Postdoctoral researcher at ESALQ-USP — digital soil mapping, ML, SOC modelling and environmental change.">
+  <meta name="twitter:image"       content="https://moquedace.github.io/assets/profile.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -371,63 +388,6 @@
       letter-spacing: .06em;
     }
 
-    /* ---------- PUB LIST ---------- */
-    .pub-list { display: flex; flex-direction: column; }
-
-    .pub-item {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 28px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-      align-items: start;
-    }
-
-    .pub-item:first-child { border-top: 1px solid var(--line); }
-
-    .pub-year {
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: .04em;
-      padding-top: 3px;
-    }
-
-    .pub-title {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: -.01em;
-      margin: 0 0 6px;
-      color: var(--ink);
-      text-decoration: none;
-      display: block;
-      transition: color .2s;
-    }
-
-    .pub-title:hover { color: var(--forest); }
-
-    .pub-journal {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .03em;
-      margin-bottom: 10px;
-    }
-
-    .pub-doi {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--forest);
-      letter-spacing: .03em;
-      text-decoration: none;
-      opacity: .7;
-      transition: opacity .2s;
-    }
-
-    .pub-doi:hover { opacity: 1; }
-
     /* ---------- CARDS (research & projects) ---------- */
     .focus-grid,
     .project-grid {
@@ -738,7 +698,7 @@
         </div>
         <div class="actions">
           <a class="button primary" href="#projects">Selected work</a>
-          <a class="button" href="https://github.com/moquedace">GitHub</a>
+          <a class="button" href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
           <a class="button" href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
           <a class="button" href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">Lattes</a>
         </div>
@@ -749,8 +709,8 @@
           <img src="assets/profile.jpg" alt="Portrait of Cássio Marques Moquedace">
         </div>
         <div class="profile-caption">
-          <h2>From field observations to spatial knowledge.</h2>
-          <p>Turning soil samples, covariates and models into maps that help explain carbon dynamics and environmental change.</p>
+          <h2>From Rondônia to Antarctica — soils across scales.</h2>
+          <p>Connecting tropical carbon stocks, periglacial landscapes and global soil processes through machine learning and spatial modelling.</p>
         </div>
         <div class="map-strip" aria-hidden="true"></div>
       </aside>
@@ -865,6 +825,8 @@
         </div>
       </div>
       <div class="affiliations">
+        <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener" aria-label="ORCID profile" style="font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;letter-spacing:.06em;opacity:.65;transition:opacity .2s;white-space:nowrap;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.65">ORCID ↗</a>
+        <div class="affil-sep"></div>
         <span class="affil-label">Affiliated with</span>
         <div class="affil-logos">
           <a href="https://www.usp.br" target="_blank" rel="noopener" aria-label="USP – Universidade de São Paulo">
