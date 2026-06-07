@@ -165,7 +165,7 @@
       transform: translateY(-1px);
     }
 
-    .map-card {
+    .profile-card {
       background:
         linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42)),
         var(--panel-solid);
@@ -175,52 +175,83 @@
       overflow: hidden;
     }
 
-    .map-visual {
-      aspect-ratio: 1.05;
-      background:
-        linear-gradient(145deg, transparent 0 20%, rgba(31, 95, 74, 0.32) 20% 22%, transparent 22% 36%, rgba(159, 81, 52, 0.42) 36% 38%, transparent 38% 56%, rgba(31, 116, 136, 0.35) 56% 58%, transparent 58%),
-        radial-gradient(circle at 26% 28%, rgba(31, 95, 74, 0.95), transparent 7rem),
-        radial-gradient(circle at 78% 64%, rgba(159, 81, 52, 0.9), transparent 8rem),
-        radial-gradient(circle at 52% 78%, rgba(31, 116, 136, 0.88), transparent 7rem),
-        #dcd1bf;
+    .portrait-frame {
+      padding: 18px 18px 0;
       position: relative;
     }
 
-    .map-visual::before,
-    .map-visual::after {
+    .portrait-frame::before {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.24) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.24) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(31, 95, 74, 0.75), rgba(31, 116, 136, 0.75));
+      background-size: 24px 24px, 24px 24px, auto;
+      border-radius: 8px;
       content: "";
-      inset: 24px;
+      inset: 18px 18px 46px;
       position: absolute;
     }
 
-    .map-visual::before {
+    .portrait-frame img {
+      aspect-ratio: 1;
+      border: 4px solid rgba(255, 250, 241, 0.92);
+      border-radius: 8px;
+      box-shadow: 0 18px 40px rgba(23, 33, 31, 0.22);
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .map-strip {
+      aspect-ratio: 4.4;
+      background:
+        linear-gradient(145deg, transparent 0 20%, rgba(31, 95, 74, 0.32) 20% 22%, transparent 22% 36%, rgba(159, 81, 52, 0.42) 36% 38%, transparent 38% 56%, rgba(31, 116, 136, 0.35) 56% 58%, transparent 58%),
+        radial-gradient(circle at 26% 28%, rgba(31, 95, 74, 0.72), transparent 5rem),
+        radial-gradient(circle at 78% 64%, rgba(159, 81, 52, 0.68), transparent 5rem),
+        radial-gradient(circle at 52% 78%, rgba(31, 116, 136, 0.64), transparent 5rem),
+        #dcd1bf;
+      border-top: 1px solid var(--line);
+      position: relative;
+    }
+
+    .map-strip::before,
+    .map-strip::after {
+      content: "";
+      inset: 14px;
+      position: absolute;
+    }
+
+    .map-strip::before {
       background:
         linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-      background-size: 26px 26px;
+      background-size: 22px 22px;
       border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
-    .map-visual::after {
+    .map-strip::after {
       border: 2px solid rgba(255, 255, 255, 0.7);
       border-radius: 50%;
-      height: 52%;
-      left: 26%;
-      top: 21%;
-      width: 52%;
+      height: 62%;
+      left: 38%;
+      top: 18%;
+      width: 24%;
     }
 
-    .map-caption {
+    .profile-caption {
       padding: 22px;
     }
 
-    .map-caption h2 {
+    .profile-caption h2 {
       font-size: 1.25rem;
       line-height: 1.2;
       margin: 0 0 10px;
     }
 
-    .map-caption p {
+    .profile-caption p {
       color: var(--muted);
       margin: 0;
     }
@@ -419,7 +450,7 @@
         padding-top: 32px;
       }
 
-      .map-card {
+      .profile-card {
         max-width: 460px;
       }
 
@@ -482,15 +513,18 @@
         </div>
       </div>
 
-      <aside class="map-card" aria-label="Spatial data visual">
-        <div class="map-visual" aria-hidden="true"></div>
-        <div class="map-caption">
-          <h2>From point observations to spatial knowledge.</h2>
+      <aside class="profile-card" aria-label="Profile portrait and spatial data visual">
+        <div class="portrait-frame">
+          <img src="assets/profile.jpg" alt="Portrait of Cássio Marques Moquedace">
+        </div>
+        <div class="profile-caption">
+          <h2>From field observations to spatial knowledge.</h2>
           <p>
             Turning soil samples, covariates and models into maps that help explain
             carbon dynamics and environmental change.
           </p>
         </div>
+        <div class="map-strip" aria-hidden="true"></div>
       </aside>
     </section>
 
