@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C. Moquedace</title>
-  <meta name="description" content="Pagina pessoal de C. Moquedace: projetos, estudos e links.">
+  <title>Cassio Moquedace | Soil Science, AI & Spatial Data</title>
+  <meta name="description" content="Bilingual personal page of Cassio Moquedace, soil scientist working with machine learning, pedometrics, digital soil mapping and environmental change.">
   <style>
     :root {
-      --background: #f7f3ec;
-      --surface: #fffdf8;
-      --surface-soft: #eee7dc;
-      --text: #202124;
-      --muted: #626a73;
-      --line: #ddd2c2;
-      --blue: #126782;
-      --green: #3a7652;
-      --red: #b34d3f;
-      --shadow: 0 20px 60px rgba(32, 33, 36, 0.12);
+      --paper: #f6f1e8;
+      --paper-2: #ebe3d5;
+      --ink: #17211f;
+      --muted: #64706b;
+      --line: #d7cbbb;
+      --panel: rgba(255, 252, 245, 0.84);
+      --panel-solid: #fffaf1;
+      --forest: #1f5f4a;
+      --soil: #9f5134;
+      --clay: #c9874f;
+      --water: #1f7488;
+      --dark: #101817;
+      --shadow: 0 24px 70px rgba(23, 33, 31, 0.13);
     }
 
     * {
@@ -30,9 +33,13 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at top left, rgba(18, 103, 130, 0.14), transparent 34rem),
-        linear-gradient(180deg, #fffaf2 0%, var(--background) 48%, #eef3ed 100%);
-      color: var(--text);
+        linear-gradient(rgba(23, 33, 31, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 33, 31, 0.04) 1px, transparent 1px),
+        radial-gradient(circle at 14% 4%, rgba(31, 116, 136, 0.18), transparent 28rem),
+        radial-gradient(circle at 88% 18%, rgba(159, 81, 52, 0.16), transparent 30rem),
+        linear-gradient(180deg, #fffaf0 0%, var(--paper) 46%, #eef2ea 100%);
+      background-size: 38px 38px, 38px 38px, auto, auto, auto;
+      color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
@@ -42,7 +49,7 @@
     }
 
     .wrap {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1160px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -50,36 +57,36 @@
       align-items: center;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      padding: 24px 0;
+      gap: 24px;
+      padding: 22px 0;
     }
 
-    .logo {
+    .brand {
       align-items: center;
       display: inline-flex;
-      gap: 10px;
+      gap: 12px;
       font-weight: 800;
       letter-spacing: 0.02em;
       text-decoration: none;
     }
 
-    .logo-mark {
+    .mark {
       align-items: center;
-      background: var(--text);
+      background: var(--dark);
       border-radius: 50%;
       color: #ffffff;
       display: inline-flex;
-      height: 38px;
+      height: 42px;
       justify-content: center;
-      width: 38px;
+      width: 42px;
     }
 
     nav {
+      color: var(--muted);
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       justify-content: flex-end;
-      color: var(--muted);
       font-size: 0.95rem;
     }
 
@@ -88,40 +95,45 @@
     }
 
     nav a:hover {
-      color: var(--text);
+      color: var(--ink);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 400px);
+      gap: 42px;
       align-items: center;
-      min-height: calc(100vh - 92px);
-      padding: 36px 0 72px;
+      min-height: calc(100vh - 86px);
+      padding: 42px 0 80px;
     }
 
-    .kicker {
-      color: var(--red);
-      font-size: 0.92rem;
+    .eyebrow {
+      color: var(--soil);
+      font-size: 0.9rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       margin: 0 0 16px;
       text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(3rem, 9vw, 6.8rem);
+      font-size: clamp(2.85rem, 8vw, 6.5rem);
       letter-spacing: 0;
-      line-height: 0.92;
+      line-height: 0.95;
       margin: 0;
-      max-width: 820px;
+      max-width: 900px;
     }
 
-    .lead {
+    .subtitle {
       color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-size: clamp(1.08rem, 2vw, 1.34rem);
       margin: 28px 0 0;
-      max-width: 700px;
+      max-width: 760px;
+    }
+
+    .subtitle strong {
+      color: var(--ink);
+      font-weight: 800;
     }
 
     .actions {
@@ -133,7 +145,7 @@
 
     .button {
       align-items: center;
-      border: 1px solid var(--text);
+      border: 1px solid var(--ink);
       border-radius: 7px;
       display: inline-flex;
       font-weight: 800;
@@ -141,10 +153,11 @@
       min-height: 46px;
       padding: 10px 16px;
       text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
     }
 
     .button.primary {
-      background: var(--text);
+      background: var(--ink);
       color: #ffffff;
     }
 
@@ -152,55 +165,80 @@
       transform: translateY(-1px);
     }
 
-    .portrait {
-      background: var(--surface);
+    .map-card {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42)),
+        var(--panel-solid);
       border: 1px solid var(--line);
       border-radius: 8px;
       box-shadow: var(--shadow);
-      padding: 24px;
+      overflow: hidden;
     }
 
-    .portrait-art {
-      align-items: center;
-      aspect-ratio: 1;
+    .map-visual {
+      aspect-ratio: 1.05;
       background:
-        linear-gradient(135deg, rgba(18, 103, 130, 0.95), rgba(58, 118, 82, 0.9)),
-        var(--blue);
-      border-radius: 8px;
-      color: #ffffff;
-      display: flex;
-      font-size: 5.6rem;
-      font-weight: 900;
-      justify-content: center;
-      letter-spacing: 0;
-      margin-bottom: 20px;
+        linear-gradient(145deg, transparent 0 20%, rgba(31, 95, 74, 0.32) 20% 22%, transparent 22% 36%, rgba(159, 81, 52, 0.42) 36% 38%, transparent 38% 56%, rgba(31, 116, 136, 0.35) 56% 58%, transparent 58%),
+        radial-gradient(circle at 26% 28%, rgba(31, 95, 74, 0.95), transparent 7rem),
+        radial-gradient(circle at 78% 64%, rgba(159, 81, 52, 0.9), transparent 8rem),
+        radial-gradient(circle at 52% 78%, rgba(31, 116, 136, 0.88), transparent 7rem),
+        #dcd1bf;
+      position: relative;
     }
 
-    .portrait h2 {
-      font-size: 1.35rem;
+    .map-visual::before,
+    .map-visual::after {
+      content: "";
+      inset: 24px;
+      position: absolute;
+    }
+
+    .map-visual::before {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+      background-size: 26px 26px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .map-visual::after {
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      height: 52%;
+      left: 26%;
+      top: 21%;
+      width: 52%;
+    }
+
+    .map-caption {
+      padding: 22px;
+    }
+
+    .map-caption h2 {
+      font-size: 1.25rem;
       line-height: 1.2;
       margin: 0 0 10px;
     }
 
-    .portrait p {
+    .map-caption p {
       color: var(--muted);
       margin: 0;
     }
 
     section {
-      padding: 72px 0;
+      padding: 76px 0;
     }
 
     .section-head {
       align-items: end;
       display: flex;
+      gap: 28px;
       justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .section-head h2 {
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-size: clamp(1.8rem, 4vw, 3.4rem);
       line-height: 1;
       margin: 0;
     }
@@ -208,24 +246,53 @@
     .section-head p {
       color: var(--muted);
       margin: 0;
-      max-width: 460px;
+      max-width: 520px;
     }
 
-    .grid {
+    .language-note {
+      color: var(--soil);
+      font-weight: 800;
+    }
+
+    .focus-grid,
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
-    .card {
-      background: rgba(255, 253, 248, 0.84);
+    .focus-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .bio,
+    .contact {
+      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
+    }
+
+    .card {
       padding: 22px;
     }
 
+    .card .num {
+      color: var(--soil);
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
     .card h3 {
-      font-size: 1.08rem;
+      font-size: 1.12rem;
+      line-height: 1.25;
       margin: 0 0 10px;
     }
 
@@ -234,28 +301,61 @@
       margin: 0;
     }
 
+    .pt {
+      border-top: 1px solid var(--line);
+      color: #43504c;
+      margin-top: 14px;
+      padding-top: 14px;
+    }
+
     .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 9px;
       margin-top: 16px;
     }
 
     .tag {
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
+      background: rgba(31, 95, 74, 0.09);
+      border: 1px solid rgba(31, 95, 74, 0.18);
       border-radius: 999px;
-      color: #394049;
-      font-size: 0.92rem;
-      padding: 7px 11px;
+      color: #2d5144;
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
+
+    .bio {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .bio-panel {
+      padding: 28px;
+    }
+
+    .bio-panel + .bio-panel {
+      border-left: 1px solid var(--line);
+      background: rgba(238, 227, 213, 0.42);
+    }
+
+    .bio-panel h3 {
+      margin: 0 0 12px;
+      font-size: 1.16rem;
+    }
+
+    .bio-panel p {
+      color: var(--muted);
+      margin: 0;
     }
 
     .contact {
-      background: var(--text);
-      border-radius: 8px;
+      align-items: center;
+      background: var(--dark);
       color: #ffffff;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, auto);
       gap: 24px;
       padding: 32px;
     }
@@ -269,32 +369,35 @@
     .contact p {
       color: rgba(255, 255, 255, 0.72);
       margin: 0;
-      max-width: 620px;
+      max-width: 660px;
     }
 
-    .contact-links {
-      align-items: center;
+    .links {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       justify-content: flex-end;
     }
 
-    .contact-links a {
-      border: 1px solid rgba(255, 255, 255, 0.32);
+    .links a {
+      border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 7px;
       min-height: 42px;
-      padding: 9px 13px;
+      padding: 9px 12px;
       text-decoration: none;
+    }
+
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.08);
     }
 
     footer {
       color: var(--muted);
-      padding: 28px 0 40px;
+      padding: 28px 0 42px;
       text-align: center;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 920px) {
       .topbar {
         align-items: flex-start;
         display: block;
@@ -306,17 +409,23 @@
       }
 
       .hero,
+      .bio,
       .contact {
         grid-template-columns: 1fr;
       }
 
       .hero {
         min-height: auto;
-        padding-top: 28px;
+        padding-top: 32px;
       }
 
-      .portrait {
-        max-width: 420px;
+      .map-card {
+        max-width: 460px;
+      }
+
+      .focus-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
       }
 
       .section-head {
@@ -328,11 +437,12 @@
         margin-top: 12px;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .bio-panel + .bio-panel {
+        border-left: 0;
+        border-top: 1px solid var(--line);
       }
 
-      .contact-links {
+      .links {
         justify-content: flex-start;
       }
     }
@@ -340,101 +450,201 @@
 </head>
 <body>
   <header class="wrap topbar">
-    <a class="logo" href="#inicio" aria-label="C. Moquedace">
-      <span class="logo-mark">CM</span>
-      <span>C. Moquedace</span>
+    <a class="brand" href="#home" aria-label="Cassio Moquedace">
+      <span class="mark">CM</span>
+      <span>Cassio Moquedace</span>
     </a>
-    <nav aria-label="Menu principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#contato">Contato</a>
+    <nav aria-label="Main navigation">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#bio">Bio</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="inicio">
-    <section class="wrap hero" id="sobre">
+  <main id="home">
+    <section class="wrap hero">
       <div>
-        <p class="kicker">Pagina pessoal</p>
-        <h1>Ideias, estudos e projetos em um so lugar.</h1>
-        <p class="lead">
-          Ola, eu sou C. Moquedace. Este site e meu espaco para organizar o que estou
-          aprendendo, mostrar projetos e deixar meus links mais importantes faceis de achar.
+        <p class="eyebrow">Soil science + machine learning + spatial data</p>
+        <h1>Soil science, machine learning, AI and spatial data for environmental change.</h1>
+        <p class="subtitle">
+          I work at the interface of <strong>pedometrics</strong>, digital soil mapping,
+          soil organic carbon modelling and data-driven environmental science.
+        </p>
+        <p class="subtitle">
+          <span class="language-note">PT-BR:</span> Ciencia do solo, inteligencia artificial
+          e dados espaciais para compreender solos, carbono e paisagens em mudanca.
         </p>
         <div class="actions">
-          <a class="button primary" href="https://github.com/moquedace">Ver GitHub</a>
-          <a class="button" href="#projetos">Ver projetos</a>
+          <a class="button primary" href="#projects">Selected work</a>
+          <a class="button" href="https://github.com/moquedace">GitHub</a>
+          <a class="button" href="http://lattes.cnpq.br/4885480549870479">Lattes</a>
         </div>
       </div>
 
-      <aside class="portrait" aria-label="Resumo pessoal">
-        <div class="portrait-art" aria-hidden="true">CM</div>
-        <h2>Em construcao, mas ja no ar.</h2>
-        <p>
-          Troque este texto por uma bio curta: sua area, o que voce estuda,
-          o que quer construir e onde as pessoas podem te encontrar.
-        </p>
+      <aside class="map-card" aria-label="Spatial data visual">
+        <div class="map-visual" aria-hidden="true"></div>
+        <div class="map-caption">
+          <h2>From point observations to spatial knowledge.</h2>
+          <p>
+            Turning soil samples, covariates and models into maps that help explain
+            carbon dynamics and environmental change.
+          </p>
+        </div>
       </aside>
     </section>
 
-    <section class="wrap" id="projetos">
+    <section class="wrap" id="research">
       <div class="section-head">
-        <h2>Projetos</h2>
-        <p>Use estes blocos para destacar trabalhos, exercicios, pesquisas ou experimentos.</p>
+        <h2>Research Focus</h2>
+        <p>
+          A compact view of the questions, methods and landscapes that shape my work.
+        </p>
       </div>
-      <div class="grid">
+      <div class="focus-grid">
         <article class="card">
-          <h3>Projeto principal</h3>
-          <p>Escreva uma frase sobre o projeto mais importante que voce quer apresentar.</p>
+          <span class="num">01</span>
+          <h3>AI for Soil Science</h3>
+          <p>Machine learning methods designed with soil knowledge, environmental structure and spatial reasoning in mind.</p>
+          <p class="pt">IA para Ciencia do Solo com modelos informados por processos, ambiente e organizacao espacial.</p>
         </article>
         <article class="card">
-          <h3>Estudos recentes</h3>
-          <p>Mostre algo que voce esta aprendendo agora, como HTML, CSS, Python ou Git.</p>
+          <span class="num">02</span>
+          <h3>Digital Soil Mapping</h3>
+          <p>Spatial prediction of soil classes and attributes using covariates, field data and computational modelling.</p>
+          <p class="pt">Mapeamento digital de solos e atributos a partir de dados de campo, covariaveis e modelos.</p>
         </article>
         <article class="card">
-          <h3>Proximas ideias</h3>
-          <p>Guarde aqui ideias futuras para transformar em projetos e publicar no GitHub.</p>
+          <span class="num">03</span>
+          <h3>Soil Organic Carbon</h3>
+          <p>Mapping, modelling and interpreting carbon stocks and their relation to climate, biota and land use.</p>
+          <p class="pt">Modelagem de estoques de carbono organico do solo e suas relacoes com clima, biota e uso da terra.</p>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>Amazonia & Global Change</h3>
+          <p>Soils, forests, agroecology and tropical landscapes under pressure from environmental transformation.</p>
+          <p class="pt">Solos, florestas, agroecologia e paisagens tropicais diante das mudancas ambientais.</p>
         </article>
       </div>
     </section>
 
-    <section class="wrap" id="habilidades">
+    <section class="wrap" id="projects">
       <div class="section-head">
-        <h2>Habilidades</h2>
-        <p>Uma lista simples para mostrar suas ferramentas, interesses e tecnologias.</p>
+        <h2>Selected Work</h2>
+        <p>
+          Three current anchors: soil-informed AI, global soil respiration and carbon mapping in the Western Amazon.
+        </p>
       </div>
-      <div class="card">
-        <h3>Ferramentas e temas</h3>
-        <p>Edite os itens abaixo para combinar com voce.</p>
-        <div class="tag-list" aria-label="Lista de habilidades">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">Projetos pessoais</span>
-          <span class="tag">Aprendizado continuo</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap" id="contato">
-      <div class="contact">
-        <div>
-          <h2>Vamos conversar?</h2>
+      <div class="project-grid">
+        <article class="card">
+          <span class="num">PhD Thesis</span>
+          <h3>Soil-Informed Machine Learning</h3>
           <p>
-            Atualize estes links com seu email, LinkedIn ou outras redes que voce queira divulgar.
+            Artificial intelligence applied to the planetary pedological dimension to model,
+            map and understand biota-soil-climate interactions and organic carbon dynamics.
+          </p>
+          <p class="pt">
+            Tese de doutorado sobre IA aplicada a dimensao pedologica planetaria,
+            integrando solos, clima, biota e carbono organico.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Pedometrics</span>
+            <span class="tag">AI</span>
+            <span class="tag">Soil carbon</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">Global respiration</span>
+          <h3>Global soil respiration</h3>
+          <p>
+            Research interest in global soil respiration as a bridge between soil processes,
+            climate feedbacks, carbon cycling and large-scale environmental data.
+          </p>
+          <p class="pt">
+            Respiracao global do solo como ponte entre processos edaficos, ciclo do carbono,
+            feedbacks climaticos e dados ambientais em larga escala.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Carbon cycle</span>
+            <span class="tag">Climate</span>
+            <span class="tag">Global data</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">Western Amazon</span>
+          <h3>Soil carbon stocks in Rondônia</h3>
+          <p>
+            Modelling and mapping soil organic carbon stocks in the Western Amazon,
+            connecting tropical soils, land use and spatial prediction.
+          </p>
+          <p class="pt">
+            Modelagem e mapeamento de estoques de carbono organico do solo na Amazonia
+            Ocidental, com foco em Rondonia.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Amazonia</span>
+            <span class="tag">DSM</span>
+            <span class="tag">Spatial modelling</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="bio">
+      <div class="section-head">
+        <h2>Bio</h2>
+        <p>
+          A bilingual short profile for academic, technical and collaborative contexts.
+        </p>
+      </div>
+      <div class="bio">
+        <div class="bio-panel">
+          <h3>English</h3>
+          <p>
+            Cassio Marques Moquedace dos Santos is a soil scientist and postdoctoral
+            researcher at ESALQ-USP, working with the GeoCiS group in the Department of
+            Soil Science. His research combines digital soil mapping, pedometrics,
+            machine learning and soil organic carbon modelling to understand soil-landscape
+            systems and environmental change.
           </p>
         </div>
-        <div class="contact-links">
-          <a href="mailto:seu-email@exemplo.com">Email</a>
+        <div class="bio-panel">
+          <h3>Português</h3>
+          <p>
+            Cassio Marques Moquedace dos Santos e cientista do solo e pesquisador de
+            pos-doutorado na ESALQ-USP, atuando no GeoCiS, Departamento de Ciencia do
+            Solo. Sua pesquisa integra mapeamento digital de solos, pedometria,
+            aprendizado de maquina e modelagem de carbono organico do solo para
+            compreender sistemas solo-paisagem e mudancas ambientais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact">
+        <div>
+          <h2>Contact & profiles</h2>
+          <p>
+            Open to scientific collaboration, spatial modelling, reproducible research
+            and AI applications for soil and environmental data.
+          </p>
+        </div>
+        <div class="links" aria-label="Contact links">
+          <a href="mailto:cassiomoquedace@gmail.com">Gmail</a>
+          <a href="mailto:cassiomoquedace@usp.br">USP email</a>
           <a href="https://github.com/moquedace">GitHub</a>
-          <a href="#">LinkedIn</a>
+          <a href="https://www.researchgate.net/profile/Cassio-Moquedace?ev=hdr_xprf">ResearchGate</a>
+          <a href="https://orcid.org/0000-0002-7673-4524">ORCID</a>
+          <a href="http://lattes.cnpq.br/4885480549870479">Lattes</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="wrap">
-    Feito com HTML e CSS. Publicado com GitHub Pages.
+    Cassio Moquedace · Soil science, AI and spatial data.
   </footer>
 </body>
 </html>
