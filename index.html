@@ -371,6 +371,63 @@
       letter-spacing: .06em;
     }
 
+    /* ---------- PUB LIST ---------- */
+    .pub-list { display: flex; flex-direction: column; }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 28px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .pub-item:first-child { border-top: 1px solid var(--line); }
+
+    .pub-year {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .04em;
+      padding-top: 3px;
+    }
+
+    .pub-title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -.01em;
+      margin: 0 0 6px;
+      color: var(--ink);
+      text-decoration: none;
+      display: block;
+      transition: color .2s;
+    }
+
+    .pub-title:hover { color: var(--forest); }
+
+    .pub-journal {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .03em;
+      margin-bottom: 10px;
+    }
+
+    .pub-doi {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--forest);
+      letter-spacing: .03em;
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+
+    .pub-doi:hover { opacity: 1; }
+
     /* ---------- CARDS (research & projects) ---------- */
     .focus-grid,
     .project-grid {
@@ -634,6 +691,7 @@
     <nav aria-label="Main navigation">
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
       <a href="#bio">Bio</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -735,49 +793,137 @@
       </div>
       <div class="section-head">
         <h2>Selected Work</h2>
-        <p>Three current anchors: soil-informed AI, global soil respiration and carbon mapping in the Western Amazon.</p>
+        <p>Three papers that best represent the intersection of machine learning, digital soil mapping and tropical carbon science.</p>
       </div>
       <div class="project-grid">
         <article class="card">
-          <span class="num">PhD Thesis</span>
-          <h3>Soil-Informed Machine Learning</h3>
-          <p>Artificial intelligence applied to the planetary pedological dimension to model, map and understand biota-soil-climate interactions and organic carbon dynamics.</p>
-          <p class="pt">Tese de doutorado sobre IA aplicada à dimensão pedológica planetária, integrando solos, clima, biota e carbono orgânico.</p>
-          <div class="tag-list">
-            <span class="tag">Pedometrics</span>
-            <span class="tag">AI</span>
-            <span class="tag">Soil carbon</span>
-          </div>
-        </article>
-        <article class="card">
-          <span class="num">Global respiration</span>
-          <h3>Global Soil Respiration</h3>
-          <p>Research interest in global soil respiration as a bridge between soil processes, climate feedbacks, carbon cycling and large-scale environmental data.</p>
-          <p class="pt">Respiração global do solo como ponte entre processos edáficos, ciclo do carbono, feedbacks climáticos e dados ambientais em larga escala.</p>
-          <div class="tag-list">
-            <span class="tag">Carbon cycle</span>
-            <span class="tag">Climate</span>
-            <span class="tag">Global data</span>
-          </div>
-        </article>
-        <article class="card">
-          <span class="num">Western Amazon</span>
-          <h3>Soil Carbon Stocks in Rondônia</h3>
-          <p>Modelling and mapping soil organic carbon stocks in the Western Amazon, connecting tropical soils, land use and spatial prediction.</p>
-          <p class="pt">Modelagem e mapeamento de estoques de carbono orgânico do solo na Amazônia Ocidental, com foco em Rondônia.</p>
+          <span class="num">Geoderma Regional · 2024</span>
+          <h3>High-resolution mapping of soil carbon stocks in the western Amazon</h3>
+          <p>Spatial modelling of soil organic carbon stocks across the western Amazon using machine learning and remote sensing covariates, with high-resolution output for Rondônia.</p>
+          <p class="pt">Modelagem de alta resolução de estoques de carbono orgânico do solo na Amazônia Ocidental, integrando aprendizado de máquina e covariáveis de sensoriamento remoto.</p>
           <div class="tag-list">
             <span class="tag">Amazônia</span>
+            <span class="tag">SOC</span>
             <span class="tag">DSM</span>
-            <span class="tag">Spatial modelling</span>
+            <span class="tag">Random Forest</span>
           </div>
         </article>
+        <article class="card">
+          <span class="num">Geoderma · 2023</span>
+          <h3>Machine learning applied for Antarctic soil mapping: spatial prediction of soil texture</h3>
+          <p>Application of machine learning algorithms to predict soil texture in periglacial landscapes of Maritime Antarctica, advancing digital soil mapping in extreme environments.</p>
+          <p class="pt">Aplicação de aprendizado de máquina para predição espacial de textura do solo na Antártica Marítima, avançando o mapeamento digital em ambientes extremos.</p>
+          <div class="tag-list">
+            <span class="tag">DSM</span>
+            <span class="tag">Antarctica</span>
+            <span class="tag">ML</span>
+            <span class="tag">Soil texture</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">CATENA · 2024</span>
+          <h3>Modelling and prediction of major soil chemical properties with Random Forest</h3>
+          <p>Predictive modelling of key soil chemical attributes using Random Forest, evaluating feature importance and spatial transferability across Brazilian soil landscapes.</p>
+          <p class="pt">Modelagem preditiva de atributos químicos do solo com Random Forest, avaliando importância de variáveis e transferabilidade espacial em paisagens brasileiras.</p>
+          <div class="tag-list">
+            <span class="tag">Random Forest</span>
+            <span class="tag">Soil chemistry</span>
+            <span class="tag">Pedometrics</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="publications">
+      <div class="section-bar">
+        <div class="section-bar-line"></div>
+        <div class="section-bar-label">03 — Publications</div>
+        <div class="section-bar-line"></div>
+      </div>
+      <div class="section-head">
+        <h2>Publications</h2>
+        <p>Peer-reviewed journal articles. Full list on <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px">ORCID</a> and <a href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px">ResearchGate</a>.</p>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-year">2025</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1080/01431161.2025.2496000" target="_blank" rel="noopener">Do finer-resolution sensors better discriminate burnt areas? A case study with MODIS and Landsat-8</a>
+            <div class="pub-journal">International Journal of Remote Sensing</div>
+            <a class="pub-doi" href="https://doi.org/10.1080/01431161.2025.2496000" target="_blank" rel="noopener">doi.org/10.1080/01431161.2025.2496000</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2024</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1016/j.jenvman.2024.120237" target="_blank" rel="noopener">Assessing the quality of constructed technosols enabled holistic monitoring of ecological restoration</a>
+            <div class="pub-journal">Journal of Environmental Management</div>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.jenvman.2024.120237" target="_blank" rel="noopener">doi.org/10.1016/j.jenvman.2024.120237</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2024</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">High-resolution mapping of soil carbon stocks in the western Amazon</a>
+            <div class="pub-journal">Geoderma Regional</div>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">doi.org/10.1016/j.geodrs.2024.e00773</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2024</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1016/j.catena.2023.107677" target="_blank" rel="noopener">Modelling and prediction of major soil chemical properties with Random Forest</a>
+            <div class="pub-journal">CATENA</div>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.catena.2023.107677" target="_blank" rel="noopener">doi.org/10.1016/j.catena.2023.107677</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2023</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1016/j.geoderma.2023.116615" target="_blank" rel="noopener">Chemical weathering detection in the periglacial landscapes of Maritime Antarctica</a>
+            <div class="pub-journal">Geoderma</div>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.geoderma.2023.116615" target="_blank" rel="noopener">doi.org/10.1016/j.geoderma.2023.116615</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2023</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener">Machine learning applied for Antarctic soil mapping: spatial prediction of soil texture</a>
+            <div class="pub-journal">Geoderma</div>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener">doi.org/10.1016/j.geoderma.2023.116405</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2023</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.1016/j.catena.2023.107427" target="_blank" rel="noopener">Radiometric and magnetic susceptibility characterization of soil profiles</a>
+            <div class="pub-journal">CATENA</div>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.catena.2023.107427" target="_blank" rel="noopener">doi.org/10.1016/j.catena.2023.107427</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2020</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.33448/rsd-v9i9.7258" target="_blank" rel="noopener">Avaliação do processo de secagem ao ar livre da madeira de jatobá na Amazônia</a>
+            <div class="pub-journal">Research, Society and Development</div>
+            <a class="pub-doi" href="https://doi.org/10.33448/rsd-v9i9.7258" target="_blank" rel="noopener">doi.org/10.33448/rsd-v9i9.7258</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2020</div>
+          <div>
+            <a class="pub-title" href="https://doi.org/10.33448/rsd-v9i8.6089" target="_blank" rel="noopener">Caracterização tecnológica de painéis engenheirados produzidos com madeira de paricá</a>
+            <div class="pub-journal">Research, Society and Development</div>
+            <a class="pub-doi" href="https://doi.org/10.33448/rsd-v9i8.6089" target="_blank" rel="noopener">doi.org/10.33448/rsd-v9i8.6089</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="wrap" id="bio">
       <div class="section-bar">
         <div class="section-bar-line"></div>
-        <div class="section-bar-label">03 — Bio</div>
+        <div class="section-bar-label">04 — Bio</div>
         <div class="section-bar-line"></div>
       </div>
       <div class="section-head">
@@ -815,7 +961,7 @@
     <section class="wrap" id="contact">
       <div class="section-bar">
         <div class="section-bar-line"></div>
-        <div class="section-bar-label">04 — Contact</div>
+        <div class="section-bar-label">05 — Contact</div>
         <div class="section-bar-line"></div>
       </div>
       <div class="contact">
