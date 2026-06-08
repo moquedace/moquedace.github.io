@@ -784,22 +784,21 @@
     /* ---------- VISUAL OUTPUT ---------- */
     .visuals-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 320px 300px;
       gap: 3px;
       border-radius: 4px;
       overflow: hidden;
-      min-height: 360px;
     }
 
     .visual-card {
       position: relative;
       overflow: hidden;
       margin: 0;
-      min-height: 170px;
     }
 
-    .visual-card:first-child { grid-row: 1 / 3; }
+    /* tese: spans full width on top row */
+    .visual-card:first-child { grid-column: 1 / 3; }
 
     .visual-bg {
       position: absolute;
@@ -910,8 +909,8 @@
       .section-head p { margin-top: 12px; }
       .bio-panel + .bio-panel { border-left: 0; border-top: 1px solid var(--line); }
       .links { justify-content: flex-start; }
-      .visuals-grid { grid-template-columns: 1fr; grid-template-rows: auto; min-height: auto; }
-      .visual-card:first-child { grid-row: auto; }
+      .visuals-grid { grid-template-columns: 1fr; grid-template-rows: 260px 220px 220px; }
+      .visual-card:first-child { grid-column: auto; }
       .tool-group { grid-template-columns: 1fr; gap: 10px; }
     }
   </style>
@@ -1102,22 +1101,25 @@
         <p class="pt">Saídas cartográficas dos artigos publicados. Envie os arquivos de mapa para substituir estes placeholders pelas figuras reais.</p>
       </div>
       <div class="visuals-grid">
+        <!-- tese: full-width top row — SOC global map (3:1 crop, covers well) -->
         <figure class="visual-card">
-          <div class="visual-bg" style="background-image:url('assets/map_tese.webp');background-size:cover;background-position:center top;"></div>
+          <div class="visual-bg" style="background-image:url('assets/map_tese.webp');background-size:cover;background-position:center 40%;"></div>
           <figcaption class="visual-caption">
-            <span class="vis-label">AI applied to the global pedological dimension</span>
+            <span class="vis-label">Global SOC stock — biota–soil–climate interactions</span>
             <span class="vis-source">PhD Thesis · UFV · 2025 · doi:10.47328/ufvbbt.2025.262</span>
           </figcaption>
         </figure>
+        <!-- stoten: bottom-left — Rs all variables panel (2.72:1, fills well) -->
         <figure class="visual-card">
-          <div class="visual-bg" style="background-image:url('assets/map_stoten.webp');background-size:cover;background-position:center;"></div>
+          <div class="visual-bg" style="background-image:url('assets/map_stoten.webp');background-size:cover;background-position:center center;"></div>
           <figcaption class="visual-caption">
             <span class="vis-label">Global soil respiration projections to 2100</span>
             <span class="vis-source">Sci. Total Environ. · 2026 · doi:10.1016/j.scitotenv.2026.181663</span>
           </figcaption>
         </figure>
+        <!-- rondonia: bottom-right — main Rondônia map (locator removed, 1.44:1) -->
         <figure class="visual-card">
-          <div class="visual-bg" style="background-image:url('assets/map_rondonia.webp');background-size:cover;background-position:center;"></div>
+          <div class="visual-bg" style="background-image:url('assets/map_rondonia.webp');background-size:cover;background-position:center center;"></div>
           <figcaption class="visual-caption">
             <span class="vis-label">High-resolution SOC stocks — western Amazon</span>
             <span class="vis-source">Geoderma Regional · 2024 · doi:10.1016/j.geodrs.2024.e00773</span>
