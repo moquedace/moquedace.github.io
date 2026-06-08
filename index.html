@@ -844,49 +844,8 @@
       opacity: .65;
     }
 
-    /* SOC Rondônia — warm earth carbon gradient */
-    .visual-card:nth-child(1) .visual-bg {
-      background:
-        radial-gradient(ellipse at 30% 60%, rgba(139,64,30,.9) 0%, transparent 55%),
-        radial-gradient(ellipse at 70% 30%, rgba(201,135,79,.7) 0%, transparent 45%),
-        radial-gradient(ellipse at 55% 78%, rgba(62,38,18,.95) 0%, transparent 38%),
-        radial-gradient(ellipse at 18% 25%, rgba(159,81,52,.6) 0%, transparent 33%),
-        repeating-linear-gradient(
-          72deg,
-          transparent 0px, transparent 22px,
-          rgba(255,255,255,.035) 22px, rgba(255,255,255,.035) 23px
-        ),
-        linear-gradient(148deg, #2d1a0e, #5a2e12 40%, #8b4020 70%, #c9874f);
-    }
-
-    /* Global respiration — blue → red spectral */
-    .visual-card:nth-child(2) .visual-bg {
-      background:
-        radial-gradient(ellipse at 65% 55%, rgba(220,60,30,.72) 0%, transparent 48%),
-        radial-gradient(ellipse at 22% 42%, rgba(31,116,136,.65) 0%, transparent 42%),
-        radial-gradient(ellipse at 80% 18%, rgba(201,135,79,.5) 0%, transparent 35%),
-        repeating-linear-gradient(
-          112deg,
-          transparent 0px, transparent 16px,
-          rgba(255,255,255,.04) 16px, rgba(255,255,255,.04) 17px
-        ),
-        linear-gradient(158deg, #0d2a33, #1f5f4a 45%, #9b3a14);
-    }
-
-    /* Soil classification — multi-class patches (thesis DSM) */
-    .visual-card:nth-child(3) .visual-bg {
-      background:
-        radial-gradient(ellipse at 75% 65%, rgba(31,95,74,.8) 0%, transparent 38%),
-        radial-gradient(ellipse at 28% 32%, rgba(139,64,30,.72) 0%, transparent 33%),
-        radial-gradient(ellipse at 58% 18%, rgba(186,142,90,.6) 0%, transparent 30%),
-        radial-gradient(ellipse at 14% 72%, rgba(31,116,136,.5) 0%, transparent 34%),
-        repeating-linear-gradient(
-          135deg,
-          transparent 0px, transparent 14px,
-          rgba(255,255,255,.05) 14px, rgba(255,255,255,.05) 15px
-        ),
-        linear-gradient(128deg, #1a3028, #4a2010 52%, #2d5038);
-    }
+    /* Visual cards — background-image set via inline style in HTML */
+    .visual-bg { background-color: var(--ink); }
 
     /* ---------- TOOLS & METHODS ---------- */
     .tools-groups {
@@ -1144,29 +1103,27 @@
       </div>
       <div class="visuals-grid">
         <figure class="visual-card">
-          <div class="visual-bg"></div>
+          <div class="visual-bg" style="background-image:url('assets/map_tese.webp');background-size:cover;background-position:center top;"></div>
           <figcaption class="visual-caption">
-            <span class="vis-label">High-resolution SOC stocks — western Amazon</span>
-            <span class="vis-source">Geoderma Regional · 2024 · doi:10.1016/j.geodrs.2024.e00773</span>
+            <span class="vis-label">AI applied to the global pedological dimension</span>
+            <span class="vis-source">PhD Thesis · UFV · 2025 · doi:10.47328/ufvbbt.2025.262</span>
           </figcaption>
         </figure>
         <figure class="visual-card">
-          <div class="visual-bg"></div>
+          <div class="visual-bg" style="background-image:url('assets/map_stoten.webp');background-size:cover;background-position:center;"></div>
           <figcaption class="visual-caption">
             <span class="vis-label">Global soil respiration projections to 2100</span>
             <span class="vis-source">Sci. Total Environ. · 2026 · doi:10.1016/j.scitotenv.2026.181663</span>
           </figcaption>
         </figure>
         <figure class="visual-card">
-          <div class="visual-bg"></div>
+          <div class="visual-bg" style="background-image:url('assets/map_rondonia.webp');background-size:cover;background-position:center;"></div>
           <figcaption class="visual-caption">
-            <span class="vis-label">AI for digital soil mapping — multi-scale</span>
-            <span class="vis-source">PhD Thesis · UFV · 2025</span>
+            <span class="vis-label">High-resolution SOC stocks — western Amazon</span>
+            <span class="vis-source">Geoderma Regional · 2024 · doi:10.1016/j.geodrs.2024.e00773</span>
           </figcaption>
         </figure>
       </div>
-      <p class="vis-swap-note en-only">↑ CSS placeholders — replace with real map images from your papers whenever you're ready.</p>
-      <p class="vis-swap-note pt">↑ Placeholders em CSS — substitua pelas figuras reais dos artigos quando quiser.</p>
     </section>
 
     <!-- ========== TOOLS & METHODS ========== -->
