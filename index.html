@@ -161,6 +161,33 @@
       100% { transform: translateX(-50%) translateY(2px); opacity: .45; }
     }
 
+    /* ---------- STATUS BADGE ---------- */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--forest);
+      flex-shrink: 0;
+      animation: statusPulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes statusPulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(31,95,74,.5); }
+      55% { opacity: .65; box-shadow: 0 0 0 5px rgba(31,95,74,0); }
+    }
+
     .eyebrow {
       font-family: var(--mono);
       font-size: 11px;
@@ -168,14 +195,14 @@
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--soil);
-      margin: 0 0 20px;
+      margin: 20px 0 0;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 7vw, 5.8rem);
+      font-size: clamp(3.4rem, 9.5vw, 8rem);
       font-weight: 700;
-      letter-spacing: -.03em;
-      line-height: .96;
+      letter-spacing: -.035em;
+      line-height: .90;
       margin: 0;
       max-width: 860px;
     }
@@ -748,8 +775,12 @@
   <main id="home">
     <section class="wrap hero">
       <div>
-        <p class="eyebrow">Soil science · Machine learning · Spatial data</p>
-        <h1>Soil science,<br><span class="accent">machine learning,</span><br>AI and <span class="accent2">spatial data</span><br>for environmental change.</h1>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Currently: Postdoctoral Researcher · ESALQ-USP
+        </div>
+        <h1>Cássio<br>Moquedace</h1>
+        <p class="eyebrow">Soil science · AI · Spatial data · Environmental change</p>
         <p class="subtitle">
           I work at the interface of <strong>pedometrics</strong>, digital soil mapping,
           soil organic carbon modelling and data-driven environmental science.
@@ -775,8 +806,9 @@
         <div class="actions">
           <a class="button primary" href="#projects">Selected work</a>
           <a class="button" href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="https://scholar.google.com/citations?user=LlwkuGwAAAAJ" target="_blank" rel="noopener">Scholar</a>
           <a class="button" href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
-          <a class="button" href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">Lattes</a>
+          <a class="button" href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">CV</a>
         </div>
       </div>
 
@@ -806,25 +838,25 @@
       <div class="focus-grid">
         <article class="card">
           <span class="num">01</span>
-          <h3>AI for Soil Science</h3>
+          <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">AI for Soil Science</a></h3>
           <p>Machine learning methods designed with soil knowledge, environmental structure and spatial reasoning in mind.</p>
           <p class="pt">IA para Ciência do Solo com modelos informados por processos, ambiente e organização espacial.</p>
         </article>
         <article class="card">
           <span class="num">02</span>
-          <h3>Digital Soil Mapping</h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener">Digital Soil Mapping</a></h3>
           <p>Spatial prediction of soil classes and attributes using covariates, field data and computational modelling.</p>
           <p class="pt">Mapeamento digital de solos e atributos a partir de dados de campo, covariáveis e modelos.</p>
         </article>
         <article class="card">
           <span class="num">03</span>
-          <h3>Soil Organic Carbon</h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">Soil Organic Carbon</a></h3>
           <p>Mapping, modelling and interpreting carbon stocks and their relation to climate, biota and land use.</p>
           <p class="pt">Modelagem de estoques de carbono orgânico do solo e suas relações com clima, biota e uso da terra.</p>
         </article>
         <article class="card">
           <span class="num">04</span>
-          <h3>Amazônia & Global Change</h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.scitotenv.2026.181663" target="_blank" rel="noopener">Amazônia & Global Change</a></h3>
           <p>Soils, forests, agroecology and tropical landscapes under pressure from environmental transformation.</p>
           <p class="pt">Solos, florestas, agroecologia e paisagens tropicais diante das mudanças ambientais.</p>
         </article>
@@ -944,6 +976,7 @@
             <div class="contact-group-label">Profiles</div>
             <div class="links">
               <a href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://scholar.google.com/citations?user=LlwkuGwAAAAJ" target="_blank" rel="noopener">Scholar</a>
               <a href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
               <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener">ORCID</a>
               <a href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">Lattes</a>
