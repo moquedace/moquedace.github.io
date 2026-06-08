@@ -557,37 +557,29 @@
 
     /* ---------- BIO ---------- */
     .bio {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 4px;
       overflow: hidden;
     }
 
-    .bio-panel { padding: 32px; }
-
-    .bio-panel + .bio-panel {
-      border-left: 1px solid var(--line);
-      background: rgba(238,227,213,.4);
-    }
-
-    .bio-panel h3 {
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 16px;
+    .bio-panel {
+      padding: 40px 44px;
+      border-left: 3px solid var(--forest);
     }
 
     .bio-panel p {
-      color: var(--muted);
+      color: var(--ink);
       margin: 0;
-      font-weight: 300;
-      font-size: 15px;
-      line-height: 1.75;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.85;
+      max-width: 76ch;
+    }
+
+    .bio-panel p strong {
+      font-weight: 600;
+      color: var(--ink);
     }
 
     /* ---------- CONTACT ---------- */
@@ -907,7 +899,7 @@
       .focus-grid, .project-grid { grid-template-columns: 1fr; }
       .section-head { display: block; }
       .section-head p { margin-top: 12px; }
-      .bio-panel + .bio-panel { border-left: 0; border-top: 1px solid var(--line); }
+      .bio-panel { padding: 28px 24px; }
       .links { justify-content: flex-start; }
       .visuals-grid { grid-template-columns: 1fr; }
       .visual-card:first-child { grid-column: auto; }
@@ -1148,7 +1140,6 @@
           <div class="tool-pills">
             <span class="tool-pill core">R</span>
             <span class="tool-pill core">Python</span>
-            <span class="tool-pill">JavaScript</span>
           </div>
         </div>
         <div class="tool-group">
@@ -1176,8 +1167,6 @@
           <div class="tool-pills">
             <span class="tool-pill core">Remote Sensing</span>
             <span class="tool-pill core">Spatial Modelling</span>
-            <span class="tool-pill">Geostatistics</span>
-            <span class="tool-pill">Kriging</span>
           </div>
         </div>
         <div class="tool-group">
@@ -1207,10 +1196,10 @@
       </div>
       <div class="bio">
         <div class="bio-panel en-only">
-          <p>Cássio Marques Moquedace is a soil scientist and postdoctoral researcher at ESALQ-USP, working with the GeoCiS group in the Department of Soil Science. His research combines digital soil mapping, pedometrics, machine learning and soil organic carbon modelling to understand soil-landscape systems and environmental change.</p>
+          <p><strong>Cássio Marques Moquedace</strong> is a soil scientist and postdoctoral researcher at ESALQ-USP, working with the GeoCiS group in the Department of Soil Science. His research combines digital soil mapping, pedometrics, machine learning and soil organic carbon modelling to understand soil-landscape systems and environmental change.</p>
         </div>
         <div class="bio-panel pt">
-          <p>Cássio Marques Moquedace é cientista do solo e pesquisador de pós-doutorado na ESALQ-USP, atuando no GeoCiS, Departamento de Ciência do Solo. Sua pesquisa integra mapeamento digital de solos, pedometria, aprendizado de máquina e modelagem de carbono orgânico do solo para compreender sistemas solo-paisagem e mudanças ambientais.</p>
+          <p><strong>Cássio Marques Moquedace</strong> é cientista do solo e pesquisador de pós-doutorado na ESALQ-USP, atuando no GeoCiS, Departamento de Ciência do Solo. Sua pesquisa integra mapeamento digital de solos, pedometria, aprendizado de máquina e modelagem de carbono orgânico do solo para compreender sistemas solo-paisagem e mudanças ambientais.</p>
         </div>
       </div>
       <div class="affiliations">
