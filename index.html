@@ -520,6 +520,11 @@
     }
 
     .pt {
+      display: none;
+    }
+
+    /* Paragraph-level PT content (inside cards) */
+    p.pt {
       border-top: 1px solid var(--line);
       color: #43504c;
       margin-top: 14px;
@@ -527,6 +532,9 @@
       font-size: 13px;
       font-weight: 400;
     }
+
+    /* Section-head PT paragraphs share same look as .en-only siblings */
+    .section-head p.pt { border-top: 0; margin-top: 0; padding-top: 0; font-size: 15px; font-weight: 300; color: var(--muted); }
 
     .tag-list {
       display: flex;
@@ -743,6 +751,194 @@
 
     .footer-updated { opacity: .55; }
 
+    /* ---------- LANGUAGE TOGGLE ---------- */
+    body.lang-pt .pt      { display: block; }
+    body.lang-pt .en-only { display: none;  }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: border-color .2s;
+      flex-shrink: 0;
+    }
+
+    .lang-toggle:hover { border-color: var(--muted); }
+    .lt-sep { opacity: .35; margin: 0 1px; }
+
+    body.lang-en .lang-toggle .lt-en,
+    body.lang-pt .lang-toggle .lt-pt {
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    /* ---------- VISUAL OUTPUT ---------- */
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 360px;
+    }
+
+    .visual-card {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      min-height: 170px;
+    }
+
+    .visual-card:first-child { grid-row: 1 / 3; }
+
+    .visual-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform .5s ease;
+    }
+
+    .visual-card:hover .visual-bg { transform: scale(1.03); }
+
+    .visual-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 14px 16px;
+      background: linear-gradient(to top, rgba(16,24,23,.82), transparent);
+      color: #fff;
+      pointer-events: none;
+    }
+
+    .vis-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+
+    .vis-source {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .72;
+    }
+
+    .vis-swap-note {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--muted);
+      margin-top: 12px;
+      opacity: .65;
+    }
+
+    /* SOC Rondônia — warm earth carbon gradient */
+    .visual-card:nth-child(1) .visual-bg {
+      background:
+        radial-gradient(ellipse at 30% 60%, rgba(139,64,30,.9) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 30%, rgba(201,135,79,.7) 0%, transparent 45%),
+        radial-gradient(ellipse at 55% 78%, rgba(62,38,18,.95) 0%, transparent 38%),
+        radial-gradient(ellipse at 18% 25%, rgba(159,81,52,.6) 0%, transparent 33%),
+        repeating-linear-gradient(
+          72deg,
+          transparent 0px, transparent 22px,
+          rgba(255,255,255,.035) 22px, rgba(255,255,255,.035) 23px
+        ),
+        linear-gradient(148deg, #2d1a0e, #5a2e12 40%, #8b4020 70%, #c9874f);
+    }
+
+    /* Global respiration — blue → red spectral */
+    .visual-card:nth-child(2) .visual-bg {
+      background:
+        radial-gradient(ellipse at 65% 55%, rgba(220,60,30,.72) 0%, transparent 48%),
+        radial-gradient(ellipse at 22% 42%, rgba(31,116,136,.65) 0%, transparent 42%),
+        radial-gradient(ellipse at 80% 18%, rgba(201,135,79,.5) 0%, transparent 35%),
+        repeating-linear-gradient(
+          112deg,
+          transparent 0px, transparent 16px,
+          rgba(255,255,255,.04) 16px, rgba(255,255,255,.04) 17px
+        ),
+        linear-gradient(158deg, #0d2a33, #1f5f4a 45%, #9b3a14);
+    }
+
+    /* Soil classification — multi-class patches (thesis DSM) */
+    .visual-card:nth-child(3) .visual-bg {
+      background:
+        radial-gradient(ellipse at 75% 65%, rgba(31,95,74,.8) 0%, transparent 38%),
+        radial-gradient(ellipse at 28% 32%, rgba(139,64,30,.72) 0%, transparent 33%),
+        radial-gradient(ellipse at 58% 18%, rgba(186,142,90,.6) 0%, transparent 30%),
+        radial-gradient(ellipse at 14% 72%, rgba(31,116,136,.5) 0%, transparent 34%),
+        repeating-linear-gradient(
+          135deg,
+          transparent 0px, transparent 14px,
+          rgba(255,255,255,.05) 14px, rgba(255,255,255,.05) 15px
+        ),
+        linear-gradient(128deg, #1a3028, #4a2010 52%, #2d5038);
+    }
+
+    /* ---------- TOOLS & METHODS ---------- */
+    .tools-groups {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tool-group {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .tool-group:last-child { border-bottom: 1px solid var(--line); }
+
+    .tool-group-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 5px;
+    }
+
+    .tool-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tool-pill {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .03em;
+      color: var(--ink);
+      background: rgba(255,252,245,.72);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 5px 13px;
+      cursor: default;
+      transition: border-color .2s, color .2s;
+    }
+
+    .tool-pill.core {
+      background: rgba(31,95,74,.07);
+      border-color: rgba(31,95,74,.24);
+      color: var(--forest);
+    }
+
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 920px) {
       .topbar { display: block; }
@@ -755,6 +951,9 @@
       .section-head p { margin-top: 12px; }
       .bio-panel + .bio-panel { border-left: 0; border-top: 1px solid var(--line); }
       .links { justify-content: flex-start; }
+      .visuals-grid { grid-template-columns: 1fr; grid-template-rows: auto; min-height: auto; }
+      .visual-card:first-child { grid-row: auto; }
+      .tool-group { grid-template-columns: 1fr; gap: 10px; }
     }
   </style>
 </head>
@@ -765,11 +964,16 @@
       <span>Cássio Marques Moquedace</span>
     </a>
     <nav aria-label="Main navigation">
-      <a href="#research">Research</a>
-      <a href="#projects">Selected work</a>
-      <a href="#bio">Bio</a>
-      <a href="#contact">Contact</a>
+      <a href="#research"  data-en="Research" data-pt="Pesquisa">Research</a>
+      <a href="#projects"  data-en="Work"     data-pt="Trabalhos">Work</a>
+      <a href="#visuals"   data-en="Visuals"  data-pt="Visuais">Visuals</a>
+      <a href="#methods"   data-en="Methods"  data-pt="Métodos">Methods</a>
+      <a href="#bio"       data-en="Bio"      data-pt="Bio">Bio</a>
+      <a href="#contact"   data-en="Contact"  data-pt="Contato">Contact</a>
     </nav>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language / Mudar idioma">
+      <span class="lt-en">EN</span><span class="lt-sep">/</span><span class="lt-pt">PT</span>
+    </button>
   </header>
 
   <main id="home">
@@ -777,17 +981,20 @@
       <div>
         <div class="status-badge">
           <span class="status-dot"></span>
-          Currently: Postdoctoral Researcher · ESALQ-USP
+          <span data-en="Currently: Postdoctoral Researcher · ESALQ-USP"
+                data-pt="Atualmente: Pesquisador Pós-Doutoral · ESALQ-USP">Currently: Postdoctoral Researcher · ESALQ-USP</span>
         </div>
         <h1>Cássio<br>Moquedace</h1>
-        <p class="eyebrow">Soil science · AI · Spatial data · Environmental change</p>
-        <p class="subtitle">
+        <p class="eyebrow"
+           data-en="Soil science · AI · Spatial data · Environmental change"
+           data-pt="Ciência do solo · IA · Dados espaciais · Mudança ambiental">Soil science · AI · Spatial data · Environmental change</p>
+        <p class="subtitle en-only">
           I work at the interface of <strong>pedometrics</strong>, digital soil mapping,
           soil organic carbon modelling and data-driven environmental science.
         </p>
-        <p class="subtitle" style="margin-top:10px">
-          <span class="language-note">PT-BR —</span> Ciência do solo, inteligência artificial
-          e dados espaciais para compreender solos, carbono e paisagens em mudança.
+        <p class="subtitle pt" style="border-top:0;margin-top:28px;padding-top:0;font-size:inherit;font-weight:300;color:var(--muted)">
+          Trabalho na interface entre <strong style="color:var(--ink)">pedometria</strong>, mapeamento digital de solos,
+          modelagem de carbono orgânico e ciência ambiental orientada por dados.
         </p>
         <div class="hero-metrics">
           <div class="hm-item">
@@ -817,8 +1024,10 @@
           <img src="assets/profile.jpg" alt="Portrait of Cássio Marques Moquedace">
         </div>
         <div class="profile-caption">
-          <h2>Soil science at planetary scale.</h2>
-          <p>Connecting field observations, remote sensing and AI to map carbon, texture and change across environments.</p>
+          <h2 data-en="Soil science at planetary scale."
+              data-pt="Ciência do solo em escala planetária.">Soil science at planetary scale.</h2>
+          <p data-en="Connecting field observations, remote sensing and AI to map carbon, texture and change across environments."
+             data-pt="Conectando observações de campo, sensoriamento remoto e IA para mapear carbono, textura e mudanças nos ambientes.">Connecting field observations, remote sensing and AI to map carbon, texture and change across environments.</p>
         </div>
         <div class="map-strip" aria-hidden="true"></div>
       </aside>
@@ -828,36 +1037,39 @@
     <section class="wrap" id="research">
       <div class="section-bar">
         <div class="section-bar-line"></div>
-        <div class="section-bar-label">01 — Research Focus</div>
+        <div class="section-bar-label"
+             data-en="01 — Research Focus"
+             data-pt="01 — Áreas de Pesquisa">01 — Research Focus</div>
         <div class="section-bar-line"></div>
       </div>
       <div class="section-head">
-        <h2>Research Focus</h2>
-        <p>A compact view of the questions, methods and landscapes that shape my work.</p>
+        <h2 data-en="Research Focus" data-pt="Áreas de Pesquisa">Research Focus</h2>
+        <p class="en-only">A compact view of the questions, methods and landscapes that shape my work.</p>
+        <p class="pt">Uma visão das questões, métodos e paisagens que moldam minha pesquisa.</p>
       </div>
       <div class="focus-grid">
         <article class="card">
           <span class="num">01</span>
           <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">AI for Soil Science</a></h3>
-          <p>Machine learning methods designed with soil knowledge, environmental structure and spatial reasoning in mind.</p>
+          <p class="en-only">Machine learning methods designed with soil knowledge, environmental structure and spatial reasoning in mind.</p>
           <p class="pt">IA para Ciência do Solo com modelos informados por processos, ambiente e organização espacial.</p>
         </article>
         <article class="card">
           <span class="num">02</span>
           <h3><a class="card-link" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener">Digital Soil Mapping</a></h3>
-          <p>Spatial prediction of soil classes and attributes using covariates, field data and computational modelling.</p>
+          <p class="en-only">Spatial prediction of soil classes and attributes using covariates, field data and computational modelling.</p>
           <p class="pt">Mapeamento digital de solos e atributos a partir de dados de campo, covariáveis e modelos.</p>
         </article>
         <article class="card">
           <span class="num">03</span>
           <h3><a class="card-link" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">Soil Organic Carbon</a></h3>
-          <p>Mapping, modelling and interpreting carbon stocks and their relation to climate, biota and land use.</p>
+          <p class="en-only">Mapping, modelling and interpreting carbon stocks and their relation to climate, biota and land use.</p>
           <p class="pt">Modelagem de estoques de carbono orgânico do solo e suas relações com clima, biota e uso da terra.</p>
         </article>
         <article class="card">
           <span class="num">04</span>
           <h3><a class="card-link" href="https://doi.org/10.1016/j.scitotenv.2026.181663" target="_blank" rel="noopener">Amazônia & Global Change</a></h3>
-          <p>Soils, forests, agroecology and tropical landscapes under pressure from environmental transformation.</p>
+          <p class="en-only">Soils, forests, agroecology and tropical landscapes under pressure from environmental transformation.</p>
           <p class="pt">Solos, florestas, agroecologia e paisagens tropicais diante das mudanças ambientais.</p>
         </article>
       </div>
@@ -866,18 +1078,21 @@
     <section class="wrap" id="projects">
       <div class="section-bar">
         <div class="section-bar-line"></div>
-        <div class="section-bar-label">02 — Selected Work</div>
+        <div class="section-bar-label"
+             data-en="02 — Selected Work"
+             data-pt="02 — Trabalhos Selecionados">02 — Selected Work</div>
         <div class="section-bar-line"></div>
       </div>
       <div class="section-head">
-        <h2>Selected Work</h2>
-        <p>A curated set of research anchors — updated as work evolves. Full list on <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px">ORCID</a>.</p>
+        <h2 data-en="Selected Work" data-pt="Trabalhos Selecionados">Selected Work</h2>
+        <p class="en-only">A curated set of research anchors — updated as work evolves. Full list on <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px">ORCID</a>.</p>
+        <p class="pt">Uma seleção de trabalhos de referência — atualizada conforme a pesquisa evolui. Lista completa no <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px">ORCID</a>.</p>
       </div>
       <div class="project-grid">
         <article class="card">
           <span class="num">PhD Thesis · UFV · 2025</span>
           <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">Artificial intelligence applied to the global pedological dimension</a></h3>
-          <p>A doctoral investigation into how AI can model, map and explain biota–soil–climate interactions and organic carbon dynamics across scales, from regional to planetary.</p>
+          <p class="en-only">A doctoral investigation into how AI can model, map and explain biota–soil–climate interactions and organic carbon dynamics across scales, from regional to planetary.</p>
           <p class="pt">Investigação doutoral sobre como a IA pode modelar, mapear e explicar interações biota–solo–clima e a dinâmica do carbono orgânico em múltiplas escalas.</p>
           <div class="tag-list">
             <span class="tag">AI</span>
@@ -889,7 +1104,7 @@
         <article class="card">
           <span class="num">Sci. Total Environment · 2026</span>
           <h3><a class="card-link" href="https://doi.org/10.1016/j.scitotenv.2026.181663" target="_blank" rel="noopener">On the importance of soil texture for predicting future global soil respiration</a></h3>
-          <p>Machine learning reveals soil texture as a key but overlooked control on 21st-century soil CO₂ efflux. Global projections at 1 km resolution under climate change scenarios to 2100.</p>
+          <p class="en-only">Machine learning reveals soil texture as a key but overlooked control on 21st-century soil CO₂ efflux. Global projections at 1 km resolution under climate change scenarios to 2100.</p>
           <p class="pt">Aprendizado de máquina revela a textura do solo como controle central — mas negligenciado — da respiração global do solo ao longo do século XXI.</p>
           <div class="tag-list">
             <span class="tag">Soil respiration</span>
@@ -901,7 +1116,7 @@
         <article class="card">
           <span class="num">Geoderma Regional · 2024</span>
           <h3><a class="card-link" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">High-resolution mapping of soil carbon stocks in the western Amazon</a></h3>
-          <p>Spatial modelling of soil organic carbon stocks across Rondônia using machine learning and remote sensing covariates — connecting tropical land-use change to carbon dynamics.</p>
+          <p class="en-only">Spatial modelling of soil organic carbon stocks across Rondônia using machine learning and remote sensing covariates — connecting tropical land-use change to carbon dynamics.</p>
           <p class="pt">Modelagem de alta resolução de estoques de carbono orgânico do solo em Rondônia, conectando mudança de uso da terra e dinâmica do carbono na Amazônia Ocidental.</p>
           <div class="tag-list">
             <span class="tag">Amazônia</span>
@@ -913,23 +1128,129 @@
       </div>
     </section>
 
-    <section class="wrap" id="bio">
+    <!-- ========== VISUAL OUTPUT ========== -->
+    <section class="wrap" id="visuals">
       <div class="section-bar">
         <div class="section-bar-line"></div>
-        <div class="section-bar-label">03 — Bio</div>
+        <div class="section-bar-label"
+             data-en="03 — Visual Output"
+             data-pt="03 — Saídas Visuais">03 — Visual Output</div>
         <div class="section-bar-line"></div>
       </div>
       <div class="section-head">
-        <h2>Bio</h2>
-        <p>A bilingual short profile for academic, technical and collaborative contexts.</p>
+        <h2 data-en="Visual Output" data-pt="Saídas Visuais">Visual Output</h2>
+        <p class="en-only">Cartographic and model outputs from published research. Send me your map files to replace these placeholders with the real figures.</p>
+        <p class="pt">Saídas cartográficas dos artigos publicados. Envie os arquivos de mapa para substituir estes placeholders pelas figuras reais.</p>
+      </div>
+      <div class="visuals-grid">
+        <figure class="visual-card">
+          <div class="visual-bg"></div>
+          <figcaption class="visual-caption">
+            <span class="vis-label">High-resolution SOC stocks — western Amazon</span>
+            <span class="vis-source">Geoderma Regional · 2024 · doi:10.1016/j.geodrs.2024.e00773</span>
+          </figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="visual-bg"></div>
+          <figcaption class="visual-caption">
+            <span class="vis-label">Global soil respiration projections to 2100</span>
+            <span class="vis-source">Sci. Total Environ. · 2026 · doi:10.1016/j.scitotenv.2026.181663</span>
+          </figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="visual-bg"></div>
+          <figcaption class="visual-caption">
+            <span class="vis-label">AI for digital soil mapping — multi-scale</span>
+            <span class="vis-source">PhD Thesis · UFV · 2025</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="vis-swap-note en-only">↑ CSS placeholders — replace with real map images from your papers whenever you're ready.</p>
+      <p class="vis-swap-note pt">↑ Placeholders em CSS — substitua pelas figuras reais dos artigos quando quiser.</p>
+    </section>
+
+    <!-- ========== TOOLS & METHODS ========== -->
+    <section class="wrap" id="methods">
+      <div class="section-bar">
+        <div class="section-bar-line"></div>
+        <div class="section-bar-label"
+             data-en="04 — Tools & Methods"
+             data-pt="04 — Ferramentas & Métodos">04 — Tools & Methods</div>
+        <div class="section-bar-line"></div>
+      </div>
+      <div class="section-head">
+        <h2 data-en="Tools & Methods" data-pt="Ferramentas & Métodos">Tools & Methods</h2>
+        <p class="en-only">Tools, algorithms and frameworks that drive the research pipeline.</p>
+        <p class="pt">Ferramentas, algoritmos e abordagens que sustentam a pesquisa.</p>
+      </div>
+      <div class="tools-groups">
+        <div class="tool-group">
+          <div class="tool-group-label" data-en="Languages" data-pt="Linguagens">Languages</div>
+          <div class="tool-pills">
+            <span class="tool-pill core">R</span>
+            <span class="tool-pill core">Python</span>
+            <span class="tool-pill">JavaScript</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <div class="tool-group-label" data-en="Platforms" data-pt="Plataformas">Platforms</div>
+          <div class="tool-pills">
+            <span class="tool-pill core">Google Earth Engine</span>
+            <span class="tool-pill">RStudio</span>
+            <span class="tool-pill">GitHub</span>
+            <span class="tool-pill">QGIS</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <div class="tool-group-label" data-en="ML / AI" data-pt="ML / IA">ML / AI</div>
+          <div class="tool-pills">
+            <span class="tool-pill core">Random Forest</span>
+            <span class="tool-pill core">XGBoost</span>
+            <span class="tool-pill">LightGBM</span>
+            <span class="tool-pill core">CNN</span>
+            <span class="tool-pill">SHAP</span>
+            <span class="tool-pill">Cubist</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <div class="tool-group-label" data-en="Spatial" data-pt="Espacial">Spatial</div>
+          <div class="tool-pills">
+            <span class="tool-pill core">Remote Sensing</span>
+            <span class="tool-pill core">Spatial Modelling</span>
+            <span class="tool-pill">Geostatistics</span>
+            <span class="tool-pill">Kriging</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <div class="tool-group-label" data-en="Discipline" data-pt="Disciplina">Discipline</div>
+          <div class="tool-pills">
+            <span class="tool-pill core">Pedometrics</span>
+            <span class="tool-pill core">Digital Soil Mapping</span>
+            <span class="tool-pill">SOC Modelling</span>
+            <span class="tool-pill">Land-use Change</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="bio">
+      <div class="section-bar">
+        <div class="section-bar-line"></div>
+        <div class="section-bar-label"
+             data-en="05 — Bio"
+             data-pt="05 — Bio">05 — Bio</div>
+        <div class="section-bar-line"></div>
+      </div>
+      <div class="section-head">
+        <h2 data-en="Bio" data-pt="Bio">Bio</h2>
+        <p class="en-only">Short profile for academic, technical and collaborative contexts.</p>
+        <p class="pt">Perfil curto para contextos acadêmicos, técnicos e colaborativos.</p>
       </div>
       <div class="bio">
-        <div class="bio-panel">
-          <h3>English</h3>
+        <div class="bio-panel en-only">
           <p>Cássio Marques Moquedace is a soil scientist and postdoctoral researcher at ESALQ-USP, working with the GeoCiS group in the Department of Soil Science. His research combines digital soil mapping, pedometrics, machine learning and soil organic carbon modelling to understand soil-landscape systems and environmental change.</p>
         </div>
-        <div class="bio-panel">
-          <h3>Português</h3>
+        <div class="bio-panel pt">
           <p>Cássio Marques Moquedace é cientista do solo e pesquisador de pós-doutorado na ESALQ-USP, atuando no GeoCiS, Departamento de Ciência do Solo. Sua pesquisa integra mapeamento digital de solos, pedometria, aprendizado de máquina e modelagem de carbono orgânico do solo para compreender sistemas solo-paisagem e mudanças ambientais.</p>
         </div>
       </div>
@@ -956,13 +1277,16 @@
     <section class="wrap" id="contact">
       <div class="section-bar">
         <div class="section-bar-line"></div>
-        <div class="section-bar-label">04 — Contact</div>
+        <div class="section-bar-label"
+             data-en="06 — Contact"
+             data-pt="06 — Contato">06 — Contact</div>
         <div class="section-bar-line"></div>
       </div>
       <div class="contact">
         <div>
-          <h2>Contact & profiles</h2>
-          <p>Open to scientific collaboration, spatial modelling, reproducible research and AI applications for soil and environmental data.</p>
+          <h2 data-en="Contact & profiles" data-pt="Contato & perfis">Contact & profiles</h2>
+          <p class="en-only">Open to scientific collaboration, spatial modelling, reproducible research and AI applications for soil and environmental data.</p>
+          <p class="pt">Aberto a colaboração científica, modelagem espacial, pesquisa reproduzível e aplicações de IA para dados de solo e ambiente.</p>
         </div>
         <div class="contact-cols">
           <div>
@@ -989,11 +1313,12 @@
 
   <footer class="wrap">
     <a class="footer-back" href="#home" aria-label="Back to top">↑ Back to top</a>
-    <span>Cássio Marques Moquedace · Soil science, AI and spatial data</span>
+    <span data-en="Cássio Marques Moquedace · Soil science, AI and spatial data"
+          data-pt="Cássio Marques Moquedace · Ciência do solo, IA e dados espaciais">Cássio Marques Moquedace · Soil science, AI and spatial data</span>
     <span class="footer-updated">Updated June 2026</span>
   </footer>
   <script>
-    // Active nav on scroll
+    /* ---- Active nav on scroll ---- */
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     const sections = [...navLinks]
       .map(a => document.querySelector(a.getAttribute('href')))
@@ -1008,13 +1333,37 @@
 
     sections.forEach(s => io.observe(s));
 
-    // Hide scroll hint after first scroll
+    /* ---- Scroll hint ---- */
     const hint = document.querySelector('.scroll-hint');
     if (hint) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 80) hint.style.opacity = '0';
       }, { passive: true });
     }
+
+    /* ---- Language toggle ---- */
+    function setLang(lang) {
+      const isEN = lang !== 'pt';
+      document.body.classList.toggle('lang-en', isEN);
+      document.body.classList.toggle('lang-pt', !isEN);
+      document.documentElement.lang = isEN ? 'en' : 'pt-BR';
+
+      // Swap text in elements with data-en / data-pt attributes
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = isEN ? el.dataset.en : el.dataset.pt;
+      });
+
+      try { localStorage.setItem('lang', lang); } catch (_) {}
+    }
+
+    // Initialise from saved preference or default to EN
+    const savedLang = (() => { try { return localStorage.getItem('lang'); } catch (_) { return null; } })();
+    setLang(savedLang || 'en');
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+      const currentlyPT = document.body.classList.contains('lang-pt');
+      setLang(currentlyPT ? 'en' : 'pt');
+    });
   </script>
 </body>
 </html>
