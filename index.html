@@ -9,6 +9,9 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23101817'/><text x='50' y='68' font-family='system-ui,sans-serif' font-weight='700' font-size='36' text-anchor='middle' fill='%23f6f1e8'>CM</text></svg>">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://moquedace.github.io">
+
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://moquedace.github.io">
@@ -121,7 +124,8 @@
       transition: color .2s;
     }
 
-    nav a:hover { color: var(--ink); }
+    nav a:hover  { color: var(--ink); }
+    nav a.active { color: var(--ink); }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -131,6 +135,30 @@
       align-items: center;
       min-height: calc(100vh - 87px);
       padding: 64px 0 80px;
+      position: relative;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      pointer-events: none;
+      animation: fadeInBounce 2.5s ease 2s forwards;
+    }
+
+    @keyframes fadeInBounce {
+      0%   { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+      30%  { opacity: .45; }
+      60%  { transform: translateX(-50%) translateY(4px); opacity: .45; }
+      80%  { transform: translateX(-50%) translateY(-2px); opacity: .45; }
+      100% { transform: translateX(-50%) translateY(2px); opacity: .45; }
     }
 
     .eyebrow {
@@ -276,39 +304,53 @@
       z-index: 1;
     }
 
+    /* Soil-profile cross-section strip */
     .map-strip {
       aspect-ratio: 4.4;
-      background:
-        linear-gradient(145deg, transparent 0 20%, rgba(31,95,74,.32) 20% 22%, transparent 22% 36%, rgba(159,81,52,.42) 36% 38%, transparent 38% 56%, rgba(31,116,136,.35) 56% 58%, transparent 58%),
-        radial-gradient(circle at 26% 28%, rgba(31,95,74,.72), transparent 5rem),
-        radial-gradient(circle at 78% 64%, rgba(159,81,52,.68), transparent 5rem),
-        radial-gradient(circle at 52% 78%, rgba(31,116,136,.64), transparent 5rem),
-        #dcd1bf;
       border-top: 1px solid var(--line);
       position: relative;
+      overflow: hidden;
+      background:
+        /* O horizon — thin organic layer */
+        linear-gradient(to bottom,
+          rgba(30,20,10,.85)   0%,
+          rgba(30,20,10,.85)   8%,
+        /* A horizon — dark humic */
+          rgba(62,38,18,.9)    8%,
+          rgba(72,44,20,.9)   28%,
+        /* B horizon — ferrugem/latossolo */
+          rgba(139,64,30,.85) 28%,
+          rgba(159,81,52,.8)  62%,
+        /* C horizon — weathered */
+          rgba(186,142,90,.7) 62%,
+          rgba(205,170,115,.6) 100%
+        );
     }
 
-    .map-strip::before, .map-strip::after {
+    /* Subtle topo contours overlay */
+    .map-strip::before {
       content: "";
       position: absolute;
-      inset: 14px;
-    }
-
-    .map-strip::before {
+      inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-      background-size: 22px 22px;
-      border: 1px solid rgba(255,255,255,.4);
+        repeating-linear-gradient(
+          105deg,
+          transparent 0px,
+          transparent 18px,
+          rgba(255,255,255,.06) 18px,
+          rgba(255,255,255,.06) 19px
+        );
     }
 
+    /* Grid + circle like before */
     .map-strip::after {
-      border: 2px solid rgba(255,255,255,.7);
-      border-radius: 50%;
-      height: 62%;
-      left: 38%;
-      top: 18%;
-      width: 24%;
+      content: "";
+      position: absolute;
+      inset: 10px;
+      background:
+        linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+      background-size: 20px 20px;
     }
 
     .profile-caption {
@@ -630,15 +672,49 @@
       flex-shrink: 0;
     }
 
+    /* ---------- CONTACT GROUPS ---------- */
+    .contact-cols {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-end;
+    }
+
+    .contact-group-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 6px;
+      text-align: right;
+    }
+
     /* ---------- FOOTER ---------- */
     footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
       color: var(--muted);
       font-family: var(--mono);
       font-size: 11px;
-      letter-spacing: .06em;
-      padding: 28px 0 42px;
-      text-align: center;
+      letter-spacing: .05em;
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--line);
+      margin-top: 8px;
     }
+
+    .footer-back {
+      text-decoration: none;
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    .footer-back:hover { color: var(--forest); }
+
+    .footer-updated { opacity: .55; }
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 920px) {
@@ -714,6 +790,7 @@
         </div>
         <div class="map-strip" aria-hidden="true"></div>
       </aside>
+      <div class="scroll-hint" aria-hidden="true">scroll ↓</div>
     </section>
 
     <section class="wrap" id="research">
@@ -830,15 +907,15 @@
         <span class="affil-label">Affiliated with</span>
         <div class="affil-logos">
           <a href="https://www.usp.br" target="_blank" rel="noopener" aria-label="USP – Universidade de São Paulo">
-            <img src="assets/usp.png" alt="USP">
+            <img src="assets/usp.webp" alt="USP">
           </a>
           <div class="affil-sep"></div>
           <a href="https://www.esalq.usp.br" target="_blank" rel="noopener" aria-label="ESALQ – Escola Superior de Agricultura Luiz de Queiroz">
-            <img class="logo-esalq" src="assets/esalq.png" alt="ESALQ-USP">
+            <img class="logo-esalq" src="assets/esalq.webp" alt="ESALQ-USP">
           </a>
           <div class="affil-sep"></div>
           <a href="https://geocis.esalq.usp.br" target="_blank" rel="noopener" aria-label="GeoCiS – Grupo de Geotecnologias em Ciência do Solo">
-            <img class="logo-geocis" src="assets/geocis.png" alt="GeoCiS">
+            <img class="logo-geocis" src="assets/geocis.webp" alt="GeoCiS">
           </a>
         </div>
       </div>
@@ -855,20 +932,56 @@
           <h2>Contact & profiles</h2>
           <p>Open to scientific collaboration, spatial modelling, reproducible research and AI applications for soil and environmental data.</p>
         </div>
-        <div class="links" aria-label="Contact links">
-          <a href="mailto:cassiomoquedace@gmail.com">Gmail</a>
-          <a href="mailto:cassiomoquedace@usp.br">USP email</a>
-          <a href="https://github.com/moquedace">GitHub</a>
-          <a href="https://www.researchgate.net/profile/Cassio-Moquedace?ev=hdr_xprf">ResearchGate</a>
-          <a href="https://orcid.org/0000-0002-7673-4524">ORCID</a>
-          <a href="http://lattes.cnpq.br/4885480549870479">Lattes</a>
+        <div class="contact-cols">
+          <div>
+            <div class="contact-group-label">Email</div>
+            <div class="links">
+              <a href="mailto:cassiomoquedace@gmail.com">Gmail</a>
+              <a href="mailto:cassiomoquedace@usp.br">USP</a>
+            </div>
+          </div>
+          <div>
+            <div class="contact-group-label">Profiles</div>
+            <div class="links">
+              <a href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
+              <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener">ORCID</a>
+              <a href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">Lattes</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="wrap">
-    Cássio Marques Moquedace · Soil science, AI and spatial data.
+    <a class="footer-back" href="#home" aria-label="Back to top">↑ Back to top</a>
+    <span>Cássio Marques Moquedace · Soil science, AI and spatial data</span>
+    <span class="footer-updated">Updated June 2026</span>
   </footer>
+  <script>
+    // Active nav on scroll
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const sections = [...navLinks]
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (link) link.classList.toggle('active', e.isIntersecting);
+      });
+    }, { rootMargin: '-25% 0px -70% 0px' });
+
+    sections.forEach(s => io.observe(s));
+
+    // Hide scroll hint after first scroll
+    const hint = document.querySelector('.scroll-hint');
+    if (hint) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) hint.style.opacity = '0';
+      }, { passive: true });
+    }
+  </script>
 </body>
 </html>
