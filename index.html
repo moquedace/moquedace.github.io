@@ -449,14 +449,6 @@
       font-size: 15px;
     }
 
-    .language-note {
-      color: var(--soil);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .06em;
-    }
-
     /* ---------- CARDS (research & projects) ---------- */
     .focus-grid,
     .project-grid {
@@ -535,6 +527,17 @@
 
     /* Section-head PT paragraphs share same look as .en-only siblings */
     .section-head p.pt { border-top: 0; margin-top: 0; padding-top: 0; font-size: 15px; font-weight: 300; color: var(--muted); }
+
+    /* Hero subtitle in PT keeps subtitle styling, drops the card-style border */
+    .subtitle.pt {
+      border-top: 0;
+      margin-top: 28px;
+      padding-top: 0;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 300;
+      color: var(--muted);
+    }
+    .subtitle.pt strong { color: var(--ink); font-weight: 600; }
 
     .tag-list {
       display: flex;
@@ -826,15 +829,6 @@
       opacity: .72;
     }
 
-    .vis-swap-note {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .06em;
-      color: var(--muted);
-      margin-top: 12px;
-      opacity: .65;
-    }
-
     /* Visual cards — background-image set via inline style in HTML */
     .visual-bg { background-color: var(--ink); }
 
@@ -942,18 +936,18 @@
           I work at the interface of <strong>pedometrics</strong>, digital soil mapping,
           soil organic carbon modelling and data-driven environmental science.
         </p>
-        <p class="subtitle pt" style="border-top:0;margin-top:28px;padding-top:0;font-size:inherit;font-weight:300;color:var(--muted)">
-          Trabalho na interface entre <strong style="color:var(--ink)">pedometria</strong>, mapeamento digital de solos,
+        <p class="subtitle pt">
+          Trabalho na interface entre <strong>pedometria</strong>, mapeamento digital de solos,
           modelagem de carbono orgânico e ciência ambiental orientada por dados.
         </p>
         <div class="hero-metrics">
           <div class="hm-item">
             <div class="hm-val">Global</div>
-            <div class="hm-label">Research scope</div>
+            <div class="hm-label" data-en="Research scope" data-pt="Escopo">Research scope</div>
           </div>
           <div class="hm-item">
             <div class="hm-val">R</div>
-            <div class="hm-label">Primary lang.</div>
+            <div class="hm-label" data-en="Primary lang." data-pt="Linguagem">Primary lang.</div>
           </div>
           <div class="hm-item">
             <div class="hm-val">PhD</div>
@@ -961,7 +955,7 @@
           </div>
         </div>
         <div class="actions">
-          <a class="button primary" href="#projects">Selected work</a>
+          <a class="button primary" href="#projects" data-en="Selected work" data-pt="Trabalhos">Selected work</a>
           <a class="button" href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
           <a class="button" href="https://scholar.google.com/citations?user=LlwkuGwAAAAJ" target="_blank" rel="noopener">Scholar</a>
           <a class="button" href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
@@ -1205,7 +1199,7 @@
       <div class="affiliations">
         <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener" aria-label="ORCID profile" style="font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;letter-spacing:.06em;opacity:.65;transition:opacity .2s;white-space:nowrap;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.65">ORCID ↗</a>
         <div class="affil-sep"></div>
-        <span class="affil-label">Affiliated with</span>
+        <span class="affil-label" data-en="Affiliated with" data-pt="Vinculado a">Affiliated with</span>
         <div class="affil-logos">
           <a href="https://www.usp.br" target="_blank" rel="noopener" aria-label="USP – Universidade de São Paulo">
             <img src="assets/usp.webp" alt="USP">
@@ -1238,14 +1232,14 @@
         </div>
         <div class="contact-cols">
           <div>
-            <div class="contact-group-label">Email</div>
+            <div class="contact-group-label" data-en="Email" data-pt="E-mail">Email</div>
             <div class="links">
               <a href="mailto:cassiomoquedace@gmail.com">Gmail</a>
               <a href="mailto:cassiomoquedace@usp.br">USP</a>
             </div>
           </div>
           <div>
-            <div class="contact-group-label">Profiles</div>
+            <div class="contact-group-label" data-en="Profiles" data-pt="Perfis">Profiles</div>
             <div class="links">
               <a href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
               <a href="https://scholar.google.com/citations?user=LlwkuGwAAAAJ" target="_blank" rel="noopener">Scholar</a>
@@ -1260,10 +1254,10 @@
   </main>
 
   <footer class="wrap">
-    <a class="footer-back" href="#home" aria-label="Back to top">↑ Back to top</a>
+    <a class="footer-back" href="#home" aria-label="Back to top" data-en="↑ Back to top" data-pt="↑ Voltar ao topo">↑ Back to top</a>
     <span data-en="Cássio Marques Moquedace · Soil science, AI and spatial data"
           data-pt="Cássio Marques Moquedace · Ciência do solo, IA e dados espaciais">Cássio Marques Moquedace · Soil science, AI and spatial data</span>
-    <span class="footer-updated">Updated June 2026</span>
+    <span class="footer-updated" data-en="Updated June 2026" data-pt="Atualizado em junho de 2026">Updated June 2026</span>
   </footer>
   <script>
     /* ---- Active nav on scroll ---- */
