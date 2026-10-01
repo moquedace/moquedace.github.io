@@ -25,6 +25,33 @@
   <meta name="twitter:description" content="Postdoctoral researcher at ESALQ-USP — digital soil mapping, ML, SOC modelling and environmental change.">
   <meta name="twitter:image"       content="https://moquedace.github.io/assets/profile.jpg">
 
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Cássio Marques Moquedace",
+    "url": "https://moquedace.github.io",
+    "image": "https://moquedace.github.io/assets/profile.jpg",
+    "jobTitle": "Postdoctoral Researcher",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Luiz de Queiroz College of Agriculture, University of São Paulo (ESALQ-USP)",
+      "url": "https://www.esalq.usp.br"
+    },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade Federal de Viçosa" },
+    "knowsAbout": ["Soil science", "Pedometrics", "Digital soil mapping", "Machine learning", "Soil organic carbon", "Remote sensing"],
+    "sameAs": [
+      "https://orcid.org/0000-0002-7673-4524",
+      "https://scholar.google.com/citations?user=LlwkuGwAAAAJ",
+      "https://lattes.cnpq.br/4885480549870479",
+      "https://www.researchgate.net/profile/Cassio-Moquedace",
+      "https://github.com/moquedace",
+      "https://bv.fapesp.br/pt/pesquisador/740668/cassio-marques-moquedace-dos-santos/"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -457,7 +484,7 @@
     }
 
     .focus-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .card {
       background: var(--panel);
@@ -942,8 +969,8 @@
         </p>
         <div class="hero-metrics">
           <div class="hm-item">
-            <div class="hm-val">Global</div>
-            <div class="hm-label" data-en="Research scope" data-pt="Escopo">Research scope</div>
+            <div class="hm-val">FAPESP</div>
+            <div class="hm-label" data-en="Postdoc fellow" data-pt="Bolsista pós-doc">Postdoc fellow</div>
           </div>
           <div class="hm-item">
             <div class="hm-val">R</div>
@@ -959,13 +986,13 @@
           <a class="button" href="https://github.com/moquedace" target="_blank" rel="noopener">GitHub</a>
           <a class="button" href="https://scholar.google.com/citations?user=LlwkuGwAAAAJ" target="_blank" rel="noopener">Scholar</a>
           <a class="button" href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
-          <a class="button" href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">CV</a>
+          <a class="button" href="https://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">CV</a>
         </div>
       </div>
 
       <aside class="profile-card" aria-label="Profile portrait and spatial data visual">
         <div class="portrait-frame">
-          <img src="assets/profile.jpg" alt="Portrait of Cássio Marques Moquedace">
+          <picture><source srcset="assets/profile.webp" type="image/webp"><img src="assets/profile.jpg" alt="Portrait of Cássio Marques Moquedace" width="800" height="800"></picture>
         </div>
         <div class="profile-caption">
           <h2 data-en="Soil science at planetary scale."
@@ -994,25 +1021,25 @@
       <div class="focus-grid">
         <article class="card">
           <span class="num">01</span>
-          <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">AI for Soil Science</a></h3>
+          <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener" data-en="AI for Soil Science" data-pt="IA para Ciência do Solo">AI for Soil Science</a></h3>
           <p class="en-only">Machine learning methods designed with soil knowledge, environmental structure and spatial reasoning in mind.</p>
           <p class="pt">IA para Ciência do Solo com modelos informados por processos, ambiente e organização espacial.</p>
         </article>
         <article class="card">
           <span class="num">02</span>
-          <h3><a class="card-link" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener">Digital Soil Mapping</a></h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener" data-en="Digital Soil Mapping" data-pt="Mapeamento Digital de Solos">Digital Soil Mapping</a></h3>
           <p class="en-only">Spatial prediction of soil classes and attributes using covariates, field data and computational modelling.</p>
           <p class="pt">Mapeamento digital de solos e atributos a partir de dados de campo, covariáveis e modelos.</p>
         </article>
         <article class="card">
           <span class="num">03</span>
-          <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">Soil Organic Carbon</a></h3>
+          <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener" data-en="Soil Organic Carbon" data-pt="Carbono Orgânico do Solo">Soil Organic Carbon</a></h3>
           <p class="en-only">Mapping, modelling and interpreting carbon stocks and their relation to climate, biota and land use.</p>
           <p class="pt">Modelagem de estoques de carbono orgânico do solo e suas relações com clima, biota e uso da terra.</p>
         </article>
         <article class="card">
           <span class="num">04</span>
-          <h3><a class="card-link" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener">Amazônia & Global Change</a></h3>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.geodrs.2024.e00773" target="_blank" rel="noopener" data-en="Amazônia & Global Change" data-pt="Amazônia & Mudanças Globais">Amazônia & Global Change</a></h3>
           <p class="en-only">Soils, forests, agroecology and tropical landscapes under pressure from environmental transformation.</p>
           <p class="pt">Solos, florestas, agroecologia e paisagens tropicais diante das mudanças ambientais.</p>
         </article>
@@ -1034,7 +1061,7 @@
       </div>
       <div class="project-grid">
         <article class="card">
-          <span class="num">PhD Thesis · UFV · 2025</span>
+          <span class="num" data-en="PhD Thesis · UFV · 2025" data-pt="Tese de doutorado · UFV · 2025">PhD Thesis · UFV · 2025</span>
           <h3><a class="card-link" href="https://doi.org/10.47328/ufvbbt.2025.262" target="_blank" rel="noopener">Artificial intelligence applied to the global pedological dimension</a></h3>
           <p class="en-only">A doctoral investigation into how AI can model, map and explain biota–soil–climate interactions and organic carbon dynamics across scales, from regional to planetary.</p>
           <p class="pt">Investigação doutoral sobre como a IA pode modelar, mapear e explicar interações biota–solo–clima e a dinâmica do carbono orgânico em múltiplas escalas.</p>
@@ -1051,8 +1078,8 @@
           <p class="en-only">Machine learning reveals soil texture as a key but overlooked control on 21st-century soil CO₂ efflux. Global projections at 1 km resolution under climate change scenarios to 2100.</p>
           <p class="pt">Aprendizado de máquina revela a textura do solo como controle central — mas negligenciado — da respiração global do solo ao longo do século XXI.</p>
           <div class="tag-list">
-            <span class="tag">Soil respiration</span>
-            <span class="tag">Climate change</span>
+            <span class="tag" data-en="Soil respiration" data-pt="Respiração do solo">Soil respiration</span>
+            <span class="tag" data-en="Climate change" data-pt="Mudança climática">Climate change</span>
             <span class="tag">Global</span>
             <span class="tag">ML</span>
           </div>
@@ -1067,6 +1094,18 @@
             <span class="tag">SOC</span>
             <span class="tag">DSM</span>
             <span class="tag">Random Forest</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">Geoderma · 2023</span>
+          <h3><a class="card-link" href="https://doi.org/10.1016/j.geoderma.2023.116405" target="_blank" rel="noopener">Machine learning applied for Antarctic soil mapping: spatial prediction of soil texture for Maritime Antarctica and Northern Antarctic Peninsula</a></h3>
+          <p class="en-only">Machine learning models predict soil texture across ice-free areas of Maritime Antarctica and the Northern Antarctic Peninsula, producing the first spatial texture maps for these environments.</p>
+          <p class="pt">Modelos de aprendizado de máquina predizem a textura do solo nas áreas livres de gelo da Antártica Marítima e do norte da Península Antártica.</p>
+          <div class="tag-list">
+            <span class="tag" data-en="Antarctica" data-pt="Antártica">Antarctica</span>
+            <span class="tag" data-en="Soil texture" data-pt="Textura do solo">Soil texture</span>
+            <span class="tag">DSM</span>
+            <span class="tag">ML</span>
           </div>
         </article>
       </div>
@@ -1089,15 +1128,15 @@
       <div class="visuals-grid">
         <!-- tese: full-width top row — SOC global map (3:1 crop, covers well) -->
         <figure class="visual-card">
-          <div class="visual-bg" style="background-image:url('assets/map_tese.webp');background-size:cover;background-position:center 40%;"></div>
+          <div class="visual-bg" role="img" aria-label="Global map of soil organic carbon stocks" style="background-image:url('assets/map_tese.webp');background-size:cover;background-position:center 40%;"></div>
           <figcaption class="visual-caption">
             <span class="vis-label" data-en="Global SOC stock — biota–soil–climate interactions" data-pt="Estoque global de COS — interações biota–solo–clima">Global SOC stock — biota–soil–climate interactions</span>
-            <span class="vis-source">PhD Thesis · UFV · 2025 · doi:10.47328/ufvbbt.2025.262</span>
+            <span class="vis-source"><span data-en="PhD Thesis" data-pt="Tese de doutorado">PhD Thesis</span> · UFV · 2025 · doi:10.47328/ufvbbt.2025.262</span>
           </figcaption>
         </figure>
         <!-- stoten: bottom-left — Rs all variables panel (2.72:1, fills well) -->
         <figure class="visual-card">
-          <div class="visual-bg" style="background-image:url('assets/map_stoten.webp');background-size:cover;background-position:center center;"></div>
+          <div class="visual-bg" role="img" aria-label="Maps of projected global soil respiration to 2100" style="background-image:url('assets/map_stoten.webp');background-size:cover;background-position:center center;"></div>
           <figcaption class="visual-caption">
             <span class="vis-label" data-en="Global soil respiration projections to 2100" data-pt="Projeções da respiração global do solo até 2100">Global soil respiration projections to 2100</span>
             <span class="vis-source">Sci. Total Environ. · 2026 · doi:10.1016/j.scitotenv.2026.181663</span>
@@ -1105,7 +1144,7 @@
         </figure>
         <!-- rondonia: bottom-right — main Rondônia map (locator removed, 1.44:1) -->
         <figure class="visual-card">
-          <div class="visual-bg" style="background-image:url('assets/map_rondonia.webp');background-size:cover;background-position:center center;"></div>
+          <div class="visual-bg" role="img" aria-label="Soil organic carbon stock map of Rondônia, western Amazon" style="background-image:url('assets/map_rondonia.webp');background-size:cover;background-position:center center;"></div>
           <figcaption class="visual-caption">
             <span class="vis-label" data-en="High-resolution SOC stocks — western Amazon" data-pt="Estoques de COS em alta resolução — Amazônia Ocidental">High-resolution SOC stocks — western Amazon</span>
             <span class="vis-source">Geoderma Regional · 2024 · doi:10.1016/j.geodrs.2024.e00773</span>
@@ -1245,7 +1284,8 @@
               <a href="https://scholar.google.com/citations?user=LlwkuGwAAAAJ" target="_blank" rel="noopener">Scholar</a>
               <a href="https://www.researchgate.net/profile/Cassio-Moquedace" target="_blank" rel="noopener">ResearchGate</a>
               <a href="https://orcid.org/0000-0002-7673-4524" target="_blank" rel="noopener">ORCID</a>
-              <a href="http://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">Lattes</a>
+              <a href="https://lattes.cnpq.br/4885480549870479" target="_blank" rel="noopener">Lattes</a>
+              <a href="https://bv.fapesp.br/pt/pesquisador/740668/cassio-marques-moquedace-dos-santos/" target="_blank" rel="noopener">BV FAPESP</a>
             </div>
           </div>
         </div>
